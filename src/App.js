@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
 import './App.css';
+import romanEmpire from './reducers/empireReducer'
+
+// components
+import Information from './components/Information';
+
 
 function App() {
+
+ //console.log(romanEmpire.getState()[0])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <p>Roman Empire Clicker</p>
+      <Information />
+    </>
+  )
 }
 
+const renderApp = () => {
+  ReactDOM.render(
+    <Provider store={romanEmpire}>
+      <App />
+    </Provider>
+    ,
+    document.getElementById('root')
+  )
+}
+
+renderApp()
+romanEmpire.subscribe(renderApp)
 export default App;
