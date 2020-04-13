@@ -3,19 +3,24 @@ import { createStore } from 'redux'
 const startGameRomanEmpire = [
     {
       "gold": 100,
-      "legionaries": 10,
+      "date": 1,
+      "legionaries": 15,
+      "message": "Conquer!",
       "enhancements": [
         {
-          "Roman Bridge": 0,
-          "Price": 100
+            "enhancementName" : "Roman Bridge",
+            "enhancementQty": 0,
+            "enhancementPrice": 100
         },
         {
-          "Roman Arch": 0,
-          "Price": 100
+            "enhancementName" : "Arc",
+            "enhancementQty": 0,
+            "enhancementPrice": 100
         },
         {
-          "Aqueduct": 0,
-          "Price": 100
+            "enhancementName" : "Aqueduct",
+            "enhancementQty": 0,
+            "enhancementPrice": 100
         }
       ],
       "baseProvincePrice": 30,

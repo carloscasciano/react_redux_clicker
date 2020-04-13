@@ -58,7 +58,22 @@ renderapp on app.js and subscribe
 print store with getState()
 
 
-Step 3 - Component
+Step 3 - Components
+
+
+Information Area
+Rules
+Command Central
+Army
+Provincies
+Enhancents
+
+provider from react-redux lib
+connect
+
+mapStateToProps
+mapDispatchToProps
+
 
 
 Extras:

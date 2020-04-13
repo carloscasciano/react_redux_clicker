@@ -1,12 +1,12 @@
-
- 
 import React from 'react'
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
-    console.log("teste", state[0].gold)
     return {
-        gold: state[0].gold
+        gold: state[0].gold,
+        date: state[0].date,
+        message: state[0].message
+
     }
 }
 
@@ -16,8 +16,8 @@ function Information(props) {
             <div>
                 <h4>Information</h4>
                 <p>Gold: {props.gold} </p>
-                <p>Date: </p>
-                <p>Status: </p>
+                <p>Date: {props.date} </p>
+                <p>Alert: {props.message}</p>
             </div>
     
     )

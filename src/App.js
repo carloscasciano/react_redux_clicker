@@ -5,7 +5,11 @@ import './App.css';
 import romanEmpire from './reducers/empireReducer'
 
 // components
-import Information from './components/Information';
+import Information from './components/Information'
+import CommandCentral from './components/CommandCentral'
+import Army from './components/Army'
+import Enhancements from './components/Enhancements'
+import Provincies from './components/Provincies'
 
 
 function App() {
@@ -15,7 +19,14 @@ function App() {
   return (
     <>
       <p>Roman Empire Clicker</p>
-      <Information />
+      <div style={{display: "flex", justifyContent:"space-around"}}>
+        <Information />
+        <CommandCentral />
+        <Army />
+        <Enhancements />
+        <Provincies />
+      </div>
+      
     </>
   )
 }
