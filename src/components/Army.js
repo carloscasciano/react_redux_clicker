@@ -11,7 +11,6 @@ const mapStateToProps = (state) => {
 
 
 function Army(props) {
-    console.log(props)
     return (
         <div>
             <h4>Army</h4>

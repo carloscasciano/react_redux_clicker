@@ -23,5 +23,12 @@ function Information(props) {
     )
 }
 
-export default connect(mapStateToProps)(Information)
+export default connect(
+    mapStateToProps, 
+    null,
+    null,
+    {
+        pure: false
+    }
+)(Information)
 

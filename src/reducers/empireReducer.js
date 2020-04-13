@@ -3,7 +3,7 @@ import { createStore } from 'redux'
 const startGameRomanEmpire = [
     {
       "legionaries": 15,
-      "gold": 100,
+      "gold": 1000,
       "date": 1,
       "message": "Conquer!",
       "enhancements": [
@@ -13,14 +13,14 @@ const startGameRomanEmpire = [
             "enhancementPrice": 100
         },
         {
-            "enhancementName" : "Arc",
+            "enhancementName" : "Roman Arc",
             "enhancementQty": 1,
-            "enhancementPrice": 100
+            "enhancementPrice": 200
         },
         {
             "enhancementName" : "Aqueduct",
             "enhancementQty": 1,
-            "enhancementPrice": 100
+            "enhancementPrice": 400
         }
       ],
       "baseProvincePrice": 30,
@@ -214,11 +214,18 @@ const startGameRomanEmpire = [
     switch (action.type) {
   
         case 'ADD_LEGIONARIES':
-          const howManyLegionaries = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Bridge")[0]["enhancementQty"]
-          state[0]["legionaries"] = state[0]["legionaries"] + howManyLegionaries
-          console.log(state)
-          return state
-      
+            const howManyLegionaries = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Bridge")[0]["enhancementQty"]
+            state[0]["legionaries"] = state[0]["legionaries"] + howManyLegionaries
+            return state
+
+        case 'ADD_ENHANCEMENT':
+            const chosenEnhancement = action.data.enhancementName
+            const enhancementToAdd = state[0]["enhancements"].filter(enh=>enh.enhancementName===chosenEnhancement)[0]
+            const valueToManage = parseInt(enhancementToAdd["enhancementPrice"])
+            enhancementToAdd["enhancementQty"] = enhancementToAdd["enhancementQty"] + 1
+            state[0]["gold"] = state[0]["gold"] + valueToManage * -1
+            return state
+
         default:
         return state
       }
