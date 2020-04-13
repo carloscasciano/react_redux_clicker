@@ -12,14 +12,22 @@ import Enhancements from './components/Enhancements'
 import Provincies from './components/Provincies'
 
 
+// TESTS
+import {addLegionaries} from './actions/actions'
+
 function App() {
 
- //console.log(romanEmpire.getState()[0])
+ 
+  const testingStore = () => {
+    romanEmpire.dispatch(addLegionaries())
+  }
+
 
   return (
     <>
       <p>Roman Empire Clicker</p>
       <div style={{display: "flex", justifyContent:"space-around"}}>
+        <button onClick={testingStore}>TESTER</button>
         <Information />
         <CommandCentral />
         <Army />

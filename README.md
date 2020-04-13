@@ -58,6 +58,12 @@ renderapp on app.js and subscribe
 print store with getState()
 
 
+Step 2.9 - Actions and Store
+
+Build Actions
+Connect Actions to reducers
+
+
 Step 3 - Components
 
 

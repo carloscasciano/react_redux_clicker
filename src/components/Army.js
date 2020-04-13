@@ -1,5 +1,6 @@
 import React from 'react'
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
+
 
 const mapStateToProps = (state) => {
     return {
@@ -7,7 +8,10 @@ const mapStateToProps = (state) => {
     }
 }
 
+
+
 function Army(props) {
+    console.log(props)
     return (
         <div>
             <h4>Army</h4>
@@ -17,4 +21,11 @@ function Army(props) {
 }
 
 
-export default connect(mapStateToProps)(Army)
+export default connect(
+    mapStateToProps, 
+    null,
+    null,
+    {
+        pure: false
+    }
+)(Army)

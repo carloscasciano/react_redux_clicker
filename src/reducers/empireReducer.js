@@ -2,24 +2,24 @@ import { createStore } from 'redux'
 
 const startGameRomanEmpire = [
     {
+      "legionaries": 15,
       "gold": 100,
       "date": 1,
-      "legionaries": 15,
       "message": "Conquer!",
       "enhancements": [
         {
             "enhancementName" : "Roman Bridge",
-            "enhancementQty": 0,
+            "enhancementQty": 1,
             "enhancementPrice": 100
         },
         {
             "enhancementName" : "Arc",
-            "enhancementQty": 0,
+            "enhancementQty": 1,
             "enhancementPrice": 100
         },
         {
             "enhancementName" : "Aqueduct",
-            "enhancementQty": 0,
+            "enhancementQty": 1,
             "enhancementPrice": 100
         }
       ],
@@ -211,7 +211,17 @@ const startGameRomanEmpire = [
 
 
   const empireReducer = (state = startGameRomanEmpire, action) => {
-      return state
+    switch (action.type) {
+  
+        case 'ADD_LEGIONARIES':
+          const howManyLegionaries = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Bridge")[0]["enhancementQty"]
+          state[0]["legionaries"] = state[0]["legionaries"] + howManyLegionaries
+          console.log(state)
+          return state
+      
+        default:
+        return state
+      }
   }
 
   const romanEmpire = createStore(empireReducer)
