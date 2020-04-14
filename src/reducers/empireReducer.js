@@ -2,7 +2,7 @@ import { createStore } from 'redux'
 
 const startGameRomanEmpire = [
     {
-      "legionaries": 15,
+      "legionaries": 45,
       "gold": 1000,
       "date": 1,
       "message": "Conquer!",
@@ -226,6 +226,12 @@ const startGameRomanEmpire = [
             state[0]["gold"] = state[0]["gold"] + valueToManage * -1
             return state
 
+        case 'CONQUER_PROVINCY':
+            const chosenProvincy = action.data.provincyName   
+            const provincyToConquer = state[0]["provincies"].filter(prov=>prov.provinceName===chosenProvincy)[0]
+            provincyToConquer["possession"] = true
+            state[0]["legionaries"] = state[0]["legionaries"] - state[0]["baseProvincePrice"]
+            return state
         default:
         return state
       }

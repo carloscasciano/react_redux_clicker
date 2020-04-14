@@ -1,10 +1,19 @@
 import React from 'react'
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
+import { conquerProvincy } from '../actions/actions'
 
 const mapStateToProps = (state) => {
     return {
         provincies: state[0].provincies,
         baseProvincePrice: state[0].baseProvincePrice
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {   
+        manageConquerProvincy: (event) => {
+            dispatch(conquerProvincy(event.target.value))   
+        }
     }
 }
 
@@ -28,7 +37,7 @@ function Provincies(props) {
                 .map(prov => 
                     <div key={Math.random()}>
                         <p>{prov.provinceName}</p>
-                        <button>conquer</button>
+                        <button onClick={props.manageConquerProvincy} value={prov.provinceName}>conquer</button>
                     </div>
                     )
             }
@@ -37,4 +46,11 @@ function Provincies(props) {
 }
 
 
-export default connect(mapStateToProps)(Provincies)
+export default connect(
+    mapStateToProps, 
+    mapDispatchToProps,
+    null,
+    {
+        pure: false
+    }
+)(Provincies)

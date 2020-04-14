@@ -16,3 +16,14 @@ export const addEnhancement = (enhancementName) => {
         }
     )
 }
+
+export const conquerProvincy = (provincyName) => {
+    return (
+        {
+            type: "CONQUER_PROVINCY",
+            data: {
+                provincyName: provincyName
+            }
+        }
+    )
+}
