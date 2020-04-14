@@ -2,8 +2,8 @@ import { createStore } from 'redux'
 
 const startGameRomanEmpire = [
     {
-      "legionaries": 45,
-      "gold": 1000,
+      "legionaries": 0,
+      "gold": 100,
       "date": 1,
       "message": "Conquer!",
       "enhancements": [
@@ -217,14 +217,10 @@ const startGameRomanEmpire = [
         case 'PASS_TURN':
             state[0]["date"]++
 
-            if (state[0]["date"]%1 === 0) {
-                const multiplierFactor = 2
+            if (state[0]["date"]%30 === 0) {
+                const multiplierFactor = 1.5
 
                 state[0]["baseProvincePrice"] = Math.round(state[0]["baseProvincePrice"] * multiplierFactor)
-
-                state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Bridge")[0]["enhancementPrice"] = Math.round(state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Bridge")[0]["enhancementPrice"] * multiplierFactor) 
-                state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Arc")[0]["enhancementPrice"] = Math.round(state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Arc")[0]["enhancementPrice"] * multiplierFactor) 
-                state[0]["enhancements"].filter(enh=>enh.enhancementName==="Aqueduct")[0]["enhancementPrice"] = Math.round(state[0]["enhancements"].filter(enh=>enh.enhancementName==="Aqueduct")[0]["enhancementPrice"] * multiplierFactor)
 
                 const provinceCount = state[0]["provincies"].filter(prov=>prov.possession===true).length
                 const arcCount = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Arc")[0]["enhancementQty"]
@@ -247,6 +243,7 @@ const startGameRomanEmpire = [
             const valueToManage = parseInt(enhancementToAdd["enhancementPrice"])
             enhancementToAdd["enhancementQty"] = enhancementToAdd["enhancementQty"] + 1
             state[0]["gold"] = state[0]["gold"] + valueToManage * -1
+            enhancementToAdd["enhancementPrice"] = enhancementToAdd["enhancementPrice"] * 2
             return state
 
         case 'CONQUER_PROVINCY':

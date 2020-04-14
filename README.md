@@ -13,8 +13,8 @@ Game Rules, adapt to your needs / reality:
 - Main Objective: Conquer all provinces.
 - Provinces are conquered by using legionaries.
 - A click trains a roman legionary and passes a day.
-- Every 30 days: [Provinces pay you gold / Improvements prices doubles / Necessary Legionary doubles]
-- Gold is used to build improvements in Rome.
+- Every 30 days: [Provinces pay you gold / Necessary Legionary grows 150%]
+- Gold is used to build improvements in Rome. When you buy a province, it prices double.
 - Improvements give you enhancements.
 
 
@@ -82,7 +82,7 @@ mapStateToProps
 mapDispatchToProps
 use null to create pure functions
 
-
+Step 4 - Styling
 
 Extras:
 
