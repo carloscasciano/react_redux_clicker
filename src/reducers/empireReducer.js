@@ -243,8 +243,7 @@ const startGameRomanEmpire = [
             enhancementToAdd["enhancementQty"] = enhancementToAdd["enhancementQty"] + 1
             state[0]["gold"] = state[0]["gold"] + valueToManage * -1
             enhancementToAdd["enhancementPrice"] = enhancementToAdd["enhancementPrice"] * 2
-            state[0]["roundLog"] = state[0]["roundLog"].concat("oi")
-            console.log(state[0]["roundLog"])
+            state[0]["roundLog"] = state[0]["roundLog"].concat("Day " + state[0]["date"] + " : " + enhancementToAdd["enhancementName"] + " bought")
             return state
 
         case 'CONQUER_PROVINCY':
@@ -253,6 +252,7 @@ const startGameRomanEmpire = [
             provincyToConquer["possession"] = true
             const priceToPay = Math.round((state[0]["baseProvincePrice"] * (1 - (state[0]["enhancements"].filter(enh=>enh.enhancementName==="Aqueduct")[0]["enhancementQty"]) / 100))) 
             state[0]["legionaries"] = state[0]["legionaries"] - priceToPay
+            state[0]["roundLog"] = state[0]["roundLog"].concat("Day " + state[0]["date"] + " : " + provincyToConquer["provinceName"] + " conquered")
             return state
 
         case 'ALERT_USER':

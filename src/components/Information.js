@@ -20,7 +20,7 @@ function Information(props) {
                 <p>Date: {props.date} </p>
                 <p>Alert: {props.message}</p>
                 <p>Log:</p>
-                {props.roundLog.map(entry=><p>{entry}</p>)}
+                {props.roundLog.map(entry=><p key={Math.random()}>{entry}</p>)}
                 
             </div>
     
