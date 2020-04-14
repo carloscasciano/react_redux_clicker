@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { addEnhancement } from '../actions/actions'
+import { addEnhancement, alertUser } from '../actions/actions'
 
 const mapStateToProps = (state) => {
     return {
@@ -8,10 +8,11 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
     return {   
         manageBuyEnhancement: (event) => {
-            dispatch(addEnhancement(event.target.value))   
+            dispatch(addEnhancement(event.target.value))
+            dispatch(alertUser(event.target.value + " bought."))  
         }
     }
 }
@@ -25,7 +26,7 @@ function Enhancements(props) {
                     <p>{enh.enhancementName}</p>
                     <p>Price: {enh.enhancementPrice}</p>
                     <p>Qty: {enh.enhancementQty}</p>
-                    <button onClick={props.manageBuyEnhancement} value={enh.enhancementName}>Buy!</button>
+                    <button onClick={props.manageBuyEnhancement} value={enh.enhancementName} >Buy!</button>
                 </div>
                 
                 )

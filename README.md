@@ -81,6 +81,8 @@ connect
 mapStateToProps
 mapDispatchToProps
 use null to create pure functions
+main logs
+
 
 Step 4 - Styling
 

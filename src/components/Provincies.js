@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { conquerProvincy } from '../actions/actions'
+import { conquerProvincy , alertUser } from '../actions/actions'
 
 const mapStateToProps = (state) => {
     return {
@@ -13,7 +13,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {   
         manageConquerProvincy: (event) => {
-            dispatch(conquerProvincy(event.target.value))   
+            dispatch(conquerProvincy(event.target.value))
+            dispatch(alertUser(event.target.value + " conquered."))
         }
     }
 }

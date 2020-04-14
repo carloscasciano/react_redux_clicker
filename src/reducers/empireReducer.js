@@ -5,7 +5,7 @@ const startGameRomanEmpire = [
       "legionaries": 0,
       "gold": 100,
       "date": 1,
-      "message": "Conquer!",
+      "message": "Grow your Empire!",
       "enhancements": [
         {
             "enhancementName" : "Roman Bridge",
@@ -225,9 +225,7 @@ const startGameRomanEmpire = [
                 const provinceCount = state[0]["provincies"].filter(prov=>prov.possession===true).length
                 const arcCount = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Arc")[0]["enhancementQty"]
                 const arcBonus = state[0]["baseProvinceGold"] * provinceCount * (arcCount / 100)
-                console.log(arcBonus)
                 state[0]["gold"] = state[0]["gold"] + state[0]["baseProvinceGold"] * provinceCount + arcBonus
-                console.log(state[0]["baseProvinceGold"] * provinceCount)
                 state[0]["baseProvinceGold"] = state[0]["baseProvinceGold"] * multiplierFactor
             }
             return state
@@ -253,6 +251,11 @@ const startGameRomanEmpire = [
             const priceToPay = Math.round((state[0]["baseProvincePrice"] * (1 - (state[0]["enhancements"].filter(enh=>enh.enhancementName==="Aqueduct")[0]["enhancementQty"]) / 100))) 
             state[0]["legionaries"] = state[0]["legionaries"] - priceToPay
             return state
+
+        case 'ALERT_USER':
+            const alertMessage = action.data.alertString
+            state[0]["message"] = alertMessage
+            return state  
 
         default:
         return state

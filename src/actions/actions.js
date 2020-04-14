@@ -35,3 +35,14 @@ export const passTurn = () => {
         }
     )
 }
+
+export const alertUser = (alertString) => {
+    return (
+        {
+            type: "ALERT_USER",
+            data: {
+                alertString: alertString
+            }
+        }
+    )
+}
