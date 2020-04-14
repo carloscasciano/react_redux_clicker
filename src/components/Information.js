@@ -5,7 +5,8 @@ const mapStateToProps = (state) => {
     return {
         gold: state[0].gold,
         date: state[0].date,
-        message: state[0].message
+        message: state[0].message,
+        roundLog: state[0].roundLog
 
     }
 }
@@ -18,6 +19,9 @@ function Information(props) {
                 <p>Gold: {props.gold} </p>
                 <p>Date: {props.date} </p>
                 <p>Alert: {props.message}</p>
+                <p>Log:</p>
+                {props.roundLog.map(entry=><p>{entry}</p>)}
+                
             </div>
     
     )

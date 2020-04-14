@@ -81,6 +81,7 @@ connect
 mapStateToProps
 mapDispatchToProps
 use null to create pure functions
+permissions
 main logs
 
 
