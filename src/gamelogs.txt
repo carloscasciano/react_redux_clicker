@@ -1,0 +1,72 @@
+15 territorios - 312 dias
+
+roundLog
+["Day 1 : Roman Bridge bought", "Day 29 : Africa co…]
+0
+"Day 1 : Roman Bridge bought"
+1
+"Day 29 : Africa conquered"
+2
+"Day 30 : Roman Bridge bought"
+3
+"Day 59 : Asia Minor conquered"
+4
+"Day 59 : Achaea conquered"
+5
+"Day 60 : Roman Bridge bought"
+6
+"Day 89 : Cyprus conquered"
+7
+"Day 89 : Crete conquered"
+8
+"Day 89 : Cyrenaica conquered"
+9
+"Day 90 : Roman Arc bought"
+10
+"Day 90 : Roman Arc bought"
+11
+"Day 90 : Aqueduct bought"
+12
+"Day 119 : Gallia Narbonensis conquered"
+13
+"Day 120 : Roman Bridge bought"
+14
+"Day 120 : Roman Arc bought"
+15
+"Day 149 : Lycia Pamphylia conquered"
+16
+"Day 149 : Macedonia & Epirus conquered"
+17
+"Day 150 : Roman Bridge bought"
+18
+"Day 150 : Aqueduct bought"
+19
+"Day 179 : Sardinia & Corsica conquered"
+20
+"Day 179 : Sicilia conquered"
+21
+"Day 180 : Roman Bridge bought"
+22
+"Day 180 : Roman Arc bought"
+23
+"Day 209 : Aquitania conquered"
+24
+"Day 210 : Aqueduct bought"
+25
+"Day 210 : Aqueduct bought"
+26
+"Day 239 : Gallia conquered"
+27
+"Day 240 : Roman Arc bought"
+28
+"Day 240 : Aqueduct bought"
+29
+"Day 269 : Arabia conquered"
+30
+"Day 270 : Roman Bridge bought"
+31
+"Day 270 : Roman Arc bought"
+32
+"Day 300 : Aqueduct bought"
+33
+"Day 312 : Baetica conquered"

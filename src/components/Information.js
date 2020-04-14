@@ -18,6 +18,7 @@ function Information(props) {
                 <h4>Information</h4>
                 <p>Gold: {props.gold} </p>
                 <p>Date: {props.date} </p>
+                <p>Days until tribute: {30 - props.date % 30} </p>
                 <p>Alert: {props.message}</p>
                 <p>Log:</p>
                 {props.roundLog.map(entry=><p key={Math.random()}>{entry}</p>)}

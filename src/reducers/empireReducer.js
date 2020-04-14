@@ -3,7 +3,7 @@ import { createStore } from 'redux'
 const startGameRomanEmpire = [
     {
       "legionaries": 0,
-      "gold": 1000,
+      "gold": 100,
       "date": 1,
       "message": "Grow your Empire!",
       "enhancements": [
@@ -110,7 +110,7 @@ const startGameRomanEmpire = [
             "provinceName": "Dacia",
             "possession": false
         },
-        {
+        /*{
             "provinceName": "Dalmatia",
             "possession": false
         },
@@ -205,7 +205,7 @@ const startGameRomanEmpire = [
         {
             "provinceName": "Mauretania Tingitana",
             "possession": false
-        }  
+        }   */
       ],
       "roundLog": []
     }
@@ -219,15 +219,15 @@ const startGameRomanEmpire = [
             state[0]["date"]++
 
             if (state[0]["date"]%30 === 0) {
-                const multiplierFactor = 1.5
+                const multiplierFactor = 1.3
 
                 state[0]["baseProvincePrice"] = Math.round(state[0]["baseProvincePrice"] * multiplierFactor)
 
                 const provinceCount = state[0]["provincies"].filter(prov=>prov.possession===true).length
                 const arcCount = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Arc")[0]["enhancementQty"]
                 const arcBonus = state[0]["baseProvinceGold"] * provinceCount * (arcCount / 100)
-                state[0]["gold"] = state[0]["gold"] + state[0]["baseProvinceGold"] * provinceCount + arcBonus
-                state[0]["baseProvinceGold"] = state[0]["baseProvinceGold"] * multiplierFactor
+                state[0]["gold"] = Math.round( state[0]["gold"] + state[0]["baseProvinceGold"] * provinceCount + arcBonus )
+                state[0]["baseProvinceGold"] = Math.round( state[0]["baseProvinceGold"] * multiplierFactor )
             }
             return state
 

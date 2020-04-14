@@ -12,9 +12,11 @@ const checkIfCanConquer = (provinceCurrentPrice, totalLegionaries, expressionIfT
 const mapStateToProps = (state) => {
     return {
         provincies: state[0].provincies,
+        totalProvincies: state[0].provincies.filter(prov=>prov.possession===true).length,
         baseProvincePrice: state[0].baseProvincePrice,
         baseProvinceGold: state[0].baseProvinceGold,
-        legionaries: state[0].legionaries
+        legionaries: state[0].legionaries,
+        arcBonus: state[0].enhancements.filter(enh=>enh.enhancementName==="Roman Arc")[0]["enhancementQty"]
     }
 }
 
@@ -33,9 +35,12 @@ const mapDispatchToProps = dispatch => {
 function Provincies(props) {
     return (
         <div>
+            {console.log(props.totalProvincies)}
             <h4>Provincies</h4>
             <p>Legionaries Needed: {props.baseProvincePrice}</p>
-            <p>Tribute per Province: {props.baseProvinceGold}</p>
+            <p>Tribute per Province: {props.baseProvinceGold} + Arc Bonus: { Math.round( props.arcBonus/100 * props.baseProvinceGold ) } </p>
+            {console.log(props.baseProvinceGold)}
+            <p>Total Tribute: { (props.baseProvinceGold * props.totalProvincies) + (Math.round( props.arcBonus/100 * props.baseProvinceGold) * props.totalProvincies) }</p>
             <h5>Roman Empire:</h5>
             {props.provincies
                 .filter(prov => prov.possession === true)
