@@ -230,8 +230,10 @@ const startGameRomanEmpire = [
             const chosenProvincy = action.data.provincyName   
             const provincyToConquer = state[0]["provincies"].filter(prov=>prov.provinceName===chosenProvincy)[0]
             provincyToConquer["possession"] = true
-            state[0]["legionaries"] = state[0]["legionaries"] - state[0]["baseProvincePrice"]
+            const priceToPay = Math.round((state[0]["baseProvincePrice"] * (1 - (state[0]["enhancements"].filter(enh=>enh.enhancementName==="Aqueduct")[0]["enhancementQty"]) / 100))) 
+            state[0]["legionaries"] = state[0]["legionaries"] - priceToPay
             return state
+
         default:
         return state
       }
