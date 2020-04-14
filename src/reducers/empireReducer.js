@@ -24,6 +24,7 @@ const startGameRomanEmpire = [
         }
       ],
       "baseProvincePrice": 30,
+      "baseProvinceGold": 100,
       "provincies": [
         {
           "provinceName": "Rome",
@@ -213,6 +214,28 @@ const startGameRomanEmpire = [
   const empireReducer = (state = startGameRomanEmpire, action) => {
     switch (action.type) {
   
+        case 'PASS_TURN':
+            state[0]["date"]++
+
+            if (state[0]["date"]%1 === 0) {
+                const multiplierFactor = 2
+
+                state[0]["baseProvincePrice"] = Math.round(state[0]["baseProvincePrice"] * multiplierFactor)
+
+                state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Bridge")[0]["enhancementPrice"] = Math.round(state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Bridge")[0]["enhancementPrice"] * multiplierFactor) 
+                state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Arc")[0]["enhancementPrice"] = Math.round(state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Arc")[0]["enhancementPrice"] * multiplierFactor) 
+                state[0]["enhancements"].filter(enh=>enh.enhancementName==="Aqueduct")[0]["enhancementPrice"] = Math.round(state[0]["enhancements"].filter(enh=>enh.enhancementName==="Aqueduct")[0]["enhancementPrice"] * multiplierFactor)
+
+                const provinceCount = state[0]["provincies"].filter(prov=>prov.possession===true).length
+                const arcCount = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Arc")[0]["enhancementQty"]
+                const arcBonus = state[0]["baseProvinceGold"] * provinceCount * (arcCount / 100)
+                console.log(arcBonus)
+                state[0]["gold"] = state[0]["gold"] + state[0]["baseProvinceGold"] * provinceCount + arcBonus
+                console.log(state[0]["baseProvinceGold"] * provinceCount)
+                state[0]["baseProvinceGold"] = state[0]["baseProvinceGold"] * multiplierFactor
+            }
+            return state
+
         case 'ADD_LEGIONARIES':
             const howManyLegionaries = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Bridge")[0]["enhancementQty"]
             state[0]["legionaries"] = state[0]["legionaries"] + howManyLegionaries

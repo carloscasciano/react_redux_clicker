@@ -1,10 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addLegionaries } from '../actions/actions'
+import { addLegionaries, passTurn } from '../actions/actions'
 
 const mapDispatchToProps = dispatch => {
     return {
-        addLegionaries: () => dispatch(addLegionaries())
+        addLegionaries: () => {
+            dispatch(addLegionaries())
+            dispatch(passTurn())
+        }
     }
 }
 

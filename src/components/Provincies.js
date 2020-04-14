@@ -5,7 +5,8 @@ import { conquerProvincy } from '../actions/actions'
 const mapStateToProps = (state) => {
     return {
         provincies: state[0].provincies,
-        baseProvincePrice: state[0].baseProvincePrice
+        baseProvincePrice: state[0].baseProvincePrice,
+        baseProvinceGold: state[0].baseProvinceGold
     }
 }
 
@@ -22,6 +23,7 @@ function Provincies(props) {
         <div>
             <h4>Provincies</h4>
             <p>Legionaries Needed: {props.baseProvincePrice}</p>
+            <p>Tribute per Province: {props.baseProvinceGold}</p>
             <h5>Roman Empire:</h5>
             {props.provincies
                 .filter(prov => prov.possession === true)

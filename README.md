@@ -12,9 +12,9 @@ Game Rules, adapt to your needs / reality:
 
 - Main Objective: Conquer all provinces.
 - Provinces are conquered by using legionaries.
-- A click trains you a roman legionary and passes a day.
+- A click trains a roman legionary and passes a day.
 - Every 30 days: [Provinces pay you gold / Improvements prices doubles / Necessary Legionary doubles]
-- Gold can be used to build improvements in Rome.
+- Gold is used to build improvements in Rome.
 - Improvements give you enhancements.
 
 

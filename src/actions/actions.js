@@ -27,3 +27,11 @@ export const conquerProvincy = (provincyName) => {
         }
     )
 }
+
+export const passTurn = () => {
+    return (
+        {
+            type: "PASS_TURN",
+        }
+    )
+}
