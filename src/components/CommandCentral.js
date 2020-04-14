@@ -20,7 +20,6 @@ function CommandCentral(props) {
     )
 }
 
-
 export default connect(
     null, 
     mapDispatchToProps,

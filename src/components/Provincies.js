@@ -2,11 +2,19 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { conquerProvincy , alertUser } from '../actions/actions'
 
+const checkIfCanConquer = (provinceCurrentPrice, totalLegionaries, expressionIfTrue, expressionIfFalse) => {
+    if (provinceCurrentPrice > totalLegionaries) {
+        return expressionIfFalse
+    }
+    return expressionIfTrue 
+} 
+
 const mapStateToProps = (state) => {
     return {
         provincies: state[0].provincies,
         baseProvincePrice: state[0].baseProvincePrice,
-        baseProvinceGold: state[0].baseProvinceGold
+        baseProvinceGold: state[0].baseProvinceGold,
+        legionaries: state[0].legionaries
     }
 }
 
@@ -15,6 +23,9 @@ const mapDispatchToProps = dispatch => {
         manageConquerProvincy: (event) => {
             dispatch(conquerProvincy(event.target.value))
             dispatch(alertUser(event.target.value + " conquered."))
+        },
+        notAvailable: () => {
+            dispatch(alertUser("Not enough Legionaries."))
         }
     }
 }
@@ -40,7 +51,7 @@ function Provincies(props) {
                 .map(prov => 
                     <div key={Math.random()}>
                         <p>{prov.provinceName}</p>
-                        <button onClick={props.manageConquerProvincy} value={prov.provinceName}>conquer</button>
+                        <button onClick={checkIfCanConquer(props.baseProvincePrice, props.legionaries, props.manageConquerProvincy, props.notAvailable)} value={prov.provinceName}>conquer</button>
                     </div>
                     )
             }
