@@ -15,6 +15,8 @@ const mapStateToProps = (state) => {
         totalProvincies: state[0].provincies.filter(prov=>prov.possession===true).length,
         baseProvincePrice: state[0].baseProvincePrice,
         baseProvinceGold: state[0].baseProvinceGold,
+        provincePriceWithBonus: state[0].provincePriceWithBonus,
+        provinceGoldWithBonus: state[0].provinceGoldWithBonus,
         legionaries: state[0].legionaries,
         arcBonus: state[0].enhancements.filter(enh=>enh.enhancementName==="Roman Arc")[0]["enhancementQty"]
     }
@@ -35,12 +37,12 @@ const mapDispatchToProps = dispatch => {
 function Provincies(props) {
     return (
         <div>
-            {console.log(props.totalProvincies)}
+            
             <h4>Provincies</h4>
-            <p>Legionaries Needed: {props.baseProvincePrice}</p>
+            <p>Legionaries Needed to Conquer: {props.provincePriceWithBonus} </p>
             <p>Tribute per Province: {props.baseProvinceGold} + Arc Bonus: { Math.round( props.arcBonus/100 * props.baseProvinceGold ) } </p>
-            {console.log(props.baseProvinceGold)}
             <p>Total Tribute: { (props.baseProvinceGold * props.totalProvincies) + (Math.round( props.arcBonus/100 * props.baseProvinceGold) * props.totalProvincies) }</p>
+            
             <h5>Roman Empire:</h5>
             {props.provincies
                 .filter(prov => prov.possession === true)
@@ -50,6 +52,7 @@ function Provincies(props) {
                     </div>
                     )
             }
+            
             <h5>To Conquer:</h5>
             {props.provincies
                 .filter(prov => prov.possession === false)

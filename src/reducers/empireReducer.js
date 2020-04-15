@@ -5,6 +5,7 @@ const startGameRomanEmpire = [
       "legionaries": 0,
       "gold": 100,
       "date": 1,
+      "daysUntilActionsChange": 14,
       "message": "Grow your Empire!",
       "enhancements": [
         {
@@ -14,7 +15,7 @@ const startGameRomanEmpire = [
         },
         {
             "enhancementName" : "Roman Arc",
-            "enhancementQty": 1,
+            "enhancementQty": 3,
             "enhancementPrice": 200
         },
         {
@@ -24,7 +25,9 @@ const startGameRomanEmpire = [
         }
       ],
       "baseProvincePrice": 30,
+      "provincePriceWithBonus": 0,
       "baseProvinceGold": 100,
+      "provinceGoldWithBonus": 0,
       "provincies": [
         {
           "provinceName": "Rome",
@@ -213,47 +216,54 @@ const startGameRomanEmpire = [
 
 
   const empireReducer = (state = startGameRomanEmpire, action) => {
+
+    const bonusPercentual = 3
+    const daysRule = state[0]["daysUntilActionsChange"]
+    const multiplierFactor = 1.1
+    const totalProvincesConquered = state[0]["provincies"].filter(prov=>prov.possession===true).length
+    const totalRomanBridges = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Bridge")[0]["enhancementQty"]
+    const totalRomanArc = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Arc")[0]["enhancementQty"]
+    const totalAqueducts = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Aqueduct")[0]["enhancementQty"]
+    
+    state[0].provincePriceWithBonus = Math.round (state[0].baseProvincePrice * (1 - totalAqueducts /  100 * bonusPercentual))
+    state[0].provinceGoldWithBonus = Math.round (state[0].baseProvinceGold) * (1 + totalRomanArc / 100 * bonusPercentual)
+
     switch (action.type) {
   
         case 'PASS_TURN':
             state[0]["date"]++
-
-            if (state[0]["date"]%30 === 0) {
-                const multiplierFactor = 1.3
-
+            if (state[0]["date"] % daysRule === 0) {
+                state[0]["gold"] = Math.round(state[0]["gold"] + state[0]["provinceGoldWithBonus"] * totalProvincesConquered)
                 state[0]["baseProvincePrice"] = Math.round(state[0]["baseProvincePrice"] * multiplierFactor)
-
-                const provinceCount = state[0]["provincies"].filter(prov=>prov.possession===true).length
-                const arcCount = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Arc")[0]["enhancementQty"]
-                const arcBonus = state[0]["baseProvinceGold"] * provinceCount * (arcCount / 100)
-                state[0]["gold"] = Math.round( state[0]["gold"] + state[0]["baseProvinceGold"] * provinceCount + arcBonus )
                 state[0]["baseProvinceGold"] = Math.round( state[0]["baseProvinceGold"] * multiplierFactor )
             }
             return state
 
         case 'ADD_LEGIONARIES':
-            const howManyLegionaries = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Bridge")[0]["enhancementQty"]
-            state[0]["legionaries"] = state[0]["legionaries"] + howManyLegionaries
+            
+            state[0]["legionaries"] = state[0]["legionaries"] + totalRomanBridges
             return state
 
         case 'ADD_ENHANCEMENT':
             const chosenEnhancement = action.data.enhancementName
             const enhancementToAdd = state[0]["enhancements"].filter(enh=>enh.enhancementName===chosenEnhancement)[0]
             const valueToManage = parseInt(enhancementToAdd["enhancementPrice"])
-            enhancementToAdd["enhancementQty"] = enhancementToAdd["enhancementQty"] + 1
             state[0]["gold"] = state[0]["gold"] + valueToManage * -1
+            enhancementToAdd["enhancementQty"] = enhancementToAdd["enhancementQty"] + 1
             enhancementToAdd["enhancementPrice"] = enhancementToAdd["enhancementPrice"] * 2
             state[0]["roundLog"] = state[0]["roundLog"].concat("Day " + state[0]["date"] + " : " + enhancementToAdd["enhancementName"] + " bought")
             return state
 
         case 'CONQUER_PROVINCY':
+
             const chosenProvincy = action.data.provincyName   
             const provincyToConquer = state[0]["provincies"].filter(prov=>prov.provinceName===chosenProvincy)[0]
             provincyToConquer["possession"] = true
-            const priceToPay = Math.round((state[0]["baseProvincePrice"] * (1 - (state[0]["enhancements"].filter(enh=>enh.enhancementName==="Aqueduct")[0]["enhancementQty"]) / 100))) 
-            state[0]["legionaries"] = state[0]["legionaries"] - priceToPay
+
+            state[0]["legionaries"] = state[0]["legionaries"] - state[0].provincePriceWithBonus
             state[0]["roundLog"] = state[0]["roundLog"].concat("Day " + state[0]["date"] + " : " + provincyToConquer["provinceName"] + " conquered")
             return state
+
 
         case 'ALERT_USER':
             const alertMessage = action.data.alertString

@@ -27,8 +27,8 @@ function App() {
       <ul>Gold is used to build improvements in Rome. When you buy a province, it prices double.</ul>
       <ul>Improvements give you enhancements:</ul>
       <li>Bridge: 1 extra legionary per click</li>
-      <li>Roman Arch: +1pp of gold from provinces</li>
-      <li>Aqueduct: -1pp on necessary legionaries</li>
+      <li>Roman Arch: +3pp of gold from provinces</li>
+      <li>Aqueduct: -3pp on necessary legionaries</li>
       
       <div style={{display: "flex", justifyContent:"space-around"}}>
         <Information />
