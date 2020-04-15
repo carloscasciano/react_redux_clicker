@@ -21,7 +21,7 @@ function App() {
       <ul>Objective: Conquer All Territories.</ul>
       <ul>Provinces are conquered by using legionaries.</ul>
       <ul>A click trains a roman legionary and passes a day.</ul>
-      <ul>Every 30 days:</ul>
+      <ul>Every X days:</ul>
       <li>Provinces pay you gold</li>
       <li>Needed legionaries to conquer, grows</li>
       <ul>Gold is used to build improvements in Rome. When you buy a province, it prices double.</ul>

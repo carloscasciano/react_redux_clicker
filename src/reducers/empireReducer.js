@@ -15,7 +15,7 @@ const startGameRomanEmpire = [
         },
         {
             "enhancementName" : "Roman Arc",
-            "enhancementQty": 3,
+            "enhancementQty": 1,
             "enhancementPrice": 200
         },
         {
@@ -24,7 +24,7 @@ const startGameRomanEmpire = [
             "enhancementPrice": 400
         }
       ],
-      "baseProvincePrice": 30,
+      "baseProvincePrice": 25,
       "provincePriceWithBonus": 0,
       "baseProvinceGold": 100,
       "provinceGoldWithBonus": 0,
@@ -219,7 +219,7 @@ const startGameRomanEmpire = [
 
     const bonusPercentual = 3
     const daysRule = state[0]["daysUntilActionsChange"]
-    const multiplierFactor = 1.1
+    const multiplierFactor = 1.2
     const totalProvincesConquered = state[0]["provincies"].filter(prov=>prov.possession===true).length
     const totalRomanBridges = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Bridge")[0]["enhancementQty"]
     const totalRomanArc = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Arc")[0]["enhancementQty"]

@@ -59,7 +59,7 @@ function Provincies(props) {
                 .map(prov => 
                     <div key={Math.random()}>
                         <p>{prov.provinceName}</p>
-                        <button onClick={checkIfCanConquer(props.baseProvincePrice, props.legionaries, props.manageConquerProvincy, props.notAvailable)} value={prov.provinceName}>conquer</button>
+                        <button onClick={checkIfCanConquer(props.provincePriceWithBonus, props.legionaries, props.manageConquerProvincy, props.notAvailable)} value={prov.provinceName}>conquer</button>
                     </div>
                     )
             }
