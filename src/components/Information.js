@@ -19,7 +19,7 @@ function Information(props) {
             <>
             <InformationSkeleton>
                  <InfoBlock>
-                    <p>Days Until Tribute </p>
+                    <p>DUT </p>
                     <p>{props.daysUntilActionsChange - props.date % props.daysUntilActionsChange}</p>
                 </InfoBlock>
                 <VerticalDivider/>

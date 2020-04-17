@@ -36,7 +36,7 @@ export const RulesAreaSkeleton = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background: ${baseColors.blue};
+    background: ${baseColors.backgroundWhite};
 `
 export const InformationSkeleton = styled.div`
     display: flex;
@@ -52,7 +52,6 @@ export const MainTitleText = styled.h2`
     margin: 3px;
 `
 
-
 export const InfoBlock = styled.div`
     display: flex;
     flex-direction: row;
@@ -63,6 +62,22 @@ export const InfoBlock = styled.div`
         margin: 5px;
     }
 `
+
+export const RegularText = styled.p`
+    color: ${baseColors.textBlack};
+    font-size: 1.2em;
+`
+
+export const RegularList = styled.ul`
+    color: ${baseColors.textBlack};
+    font-size: 1em;
+    li {
+        color: ${baseColors.textBlack};
+        list-style-type: none;
+    }
+`
+
+
 /* Dividers: */
 
 export const VerticalDivider = styled.hr`
@@ -83,4 +98,6 @@ export const LegionaryButton = styled.button`
     padding: 20px;
     border-radius: 6px;
     display: inline-block;
+    width: 300px;
+
 `
