@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addLegionaries, passTurn } from '../actions/actions'
+import { LegionaryButton } from '../styles'
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -13,10 +14,9 @@ const mapDispatchToProps = dispatch => {
 
 function CommandCentral(props) {
     return (
-        <div>
-            <h4>Command Central</h4>
-            <button onClick={props.addLegionaries}>Click Me!</button>
-        </div>
+        <>
+            <LegionaryButton onClick={props.addLegionaries}>GROW</LegionaryButton>
+        </>
     )
 }
 

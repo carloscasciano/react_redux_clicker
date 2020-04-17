@@ -1,5 +1,7 @@
 import React from 'react'
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
+
+import { MainTitleText, InfoBlock, InformationSkeleton, VerticalDivider, HorizontalDivider} from '../styles'
 
 const mapStateToProps = (state) => {
     return {
@@ -14,16 +16,26 @@ const mapStateToProps = (state) => {
 function Information(props) {
     return (
        
-            <div>
-                <h4>Information</h4>
-                <p>Gold: {props.gold} </p>
-                <p>Date: {props.date} </p>
-                <p>Days until tribute: {props.daysUntilActionsChange - props.date % props.daysUntilActionsChange} </p>
-                <p>Alert: {props.message}</p>
-                <p>Log:</p>
-                {props.roundLog.map(entry=><p key={Math.random()}>{entry}</p>)}
-                
-            </div>
+            <>
+            <InformationSkeleton>
+                 <InfoBlock>
+                    <p>Days Until Tribute </p>
+                    <p>{props.daysUntilActionsChange - props.date % props.daysUntilActionsChange}</p>
+                </InfoBlock>
+                <VerticalDivider/>
+                <InfoBlock>
+                    <p>Date </p>
+                    <p>{props.date} </p>
+                </InfoBlock>
+                <VerticalDivider/>
+                <InfoBlock>
+                    <p>Gold </p>
+                    <p>{props.gold} </p>
+                </InfoBlock>
+            </InformationSkeleton>
+            <HorizontalDivider/>
+                <p>Alert: {props.message}</p>        
+            </>
     
     )
 }

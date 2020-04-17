@@ -87,6 +87,8 @@ main logs
 
 Step 4 - Styling
 
+styles.js
+
 Extras:
 
 Roman organization: https://www.youtube.com/watch?v=Rcbedan5R1s
