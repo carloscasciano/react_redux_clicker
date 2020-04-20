@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { conquerProvincy , alertUser } from '../actions/actions'
-import { MiniTitleText, EmpireSkeleton, TerritorySkeleton , BuyProvinceBlock} from '../styles'
+import { ProvinceSkeleton, MiniTitleText, EmpireSkeleton, TerritorySkeleton , BuyProvinceBlock, ConquerButton} from '../styles'
 
 
 
@@ -39,17 +39,18 @@ const mapDispatchToProps = dispatch => {
 
 function Provincies(props) {
     return (
-        <div>
+        <ProvinceSkeleton>
             
             <MiniTitleText>Provincies</MiniTitleText>
             <p>Legionaries Needed to Conquer: {props.provincePriceWithBonus} </p>
-            <p>Tribute per Province: {props.baseProvinceGold} + Arc Bonus: { Math.round( props.arcBonus/100 * props.baseProvinceGold ) } </p>
-            <p>Total Tribute: { (props.baseProvinceGold * props.totalProvincies) + (Math.round( props.arcBonus/100 * props.baseProvinceGold) * props.totalProvincies) }</p>
             
 
             <EmpireSkeleton>
                 <TerritorySkeleton>
-                    <h5>Roman Empire:</h5>
+                    <h5>Roman Empire</h5>
+                    <p>Tribute per Province: {props.baseProvinceGold} + Arc Bonus: { Math.round( props.arcBonus/100 * props.baseProvinceGold ) } </p>
+                    <p>Total Tribute: { (props.baseProvinceGold * props.totalProvincies) + (Math.round( props.arcBonus/100 * props.baseProvinceGold) * props.totalProvincies) }</p>
+
                     {props.provincies
                         .filter(prov => prov.possession === true)
                         .map(prov =>
@@ -61,14 +62,16 @@ function Provincies(props) {
                 </TerritorySkeleton>
                
                <TerritorySkeleton>
-                <h5>To Conquer:</h5>
+                <h5>To Conquer</h5>
                     {props.provincies
                         .filter(prov => prov.possession === false)
                         .map(prov => 
                             <div key={Math.random()}>
                                 <BuyProvinceBlock>
                                     <p>{prov.provinceName}</p>
-                                    <button onClick={checkIfCanConquer(props.provincePriceWithBonus, props.legionaries, props.manageConquerProvincy, props.notAvailable)} value={prov.provinceName}>conquer</button>
+                                    <ConquerButton onClick={checkIfCanConquer(props.provincePriceWithBonus, props.legionaries, props.manageConquerProvincy, props.notAvailable)} 
+                                            value={prov.provinceName}
+                                    />
                                 </BuyProvinceBlock>
                                 
                             </div>
@@ -77,7 +80,7 @@ function Provincies(props) {
                </TerritorySkeleton>
             </EmpireSkeleton>
 
-        </div>
+        </ProvinceSkeleton>
     )
 }
 

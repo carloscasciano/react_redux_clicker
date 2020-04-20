@@ -18,7 +18,6 @@ function Army(props) {
     return (
         <ArmySkeleton>
             <MiniTitleText>Army</MiniTitleText>
-            {/* <p>Total Army: {props.legionaries}</p> */}
             {
               armyToMap.map(el => <GameIcon key={Math.random()} src={`helmets/${el}.png`}/> )   
             }           

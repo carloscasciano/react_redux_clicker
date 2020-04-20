@@ -11,7 +11,7 @@ const baseColors =
         "textGold": "#ED8E00",
         "blue": "#22333B",
         "textBlack": "#272727",
-        "backgroundWhite": "#EBEBD3",
+        "backgroundWhite": "white",
         "red": "#A53F2B"
     }
 
@@ -53,6 +53,13 @@ export const ArmySkeleton = styled.div`
     min-width: 300px;
     max-width: 300px;
 `
+
+export const EnhancementSkeleton = styled.div`
+    min-width: 300px;
+    max-width: 300px;
+`
+
+
 export const EmpireSkeleton = styled.div`
     display: flex;
     flex-direction: row;  
@@ -63,6 +70,15 @@ export const TerritorySkeleton = styled.div`
     display: flex;
     flex-direction: column;  
     justify-content: space-around;
+`
+
+export const ProvinceSkeleton = styled.div`
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-content: space-between;
+    color: black;
+    margin: 5px;
 `
 
 export const InfoBlock = styled.div`
@@ -92,10 +108,12 @@ export const BuyProvinceBlock = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    margin: 5px;
     p {
         font-size: 0.8em;
         margin: 3px;
-    }
+    };
 `
 
 /* Texts: */
@@ -153,12 +171,25 @@ export const LegionaryButton = styled.button`
 
 export const BuyButton = styled.button`
     border: none;
-    background: ${baseColors.red};
-    color: ${baseColors.blue};
-    padding: 20px;
-    border-radius: 6px;
+    background: ${baseColors.textGold};
+    color: ${baseColors.textBlack};
+    text-size: 1em;
+    border-radius: 30px;
     display: inline-block;
-    width: 60px;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+`
+
+export const ConquerButton = styled.button `
+    border: none;
+    background: ${baseColors.red};
+    color: ${baseColors.blue} ;
+    padding: 20px;
+    border-radius: 30px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
 `
 
 /* Icons: */

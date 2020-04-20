@@ -5,8 +5,6 @@ import romanEmpire from './reducers/empireReducer'
 
 // components
 import GameArea from './components/GameArea'
-import Enhancements from './components/Enhancements'
-import Provincies from './components/Provincies'
 import Rules from './components/Rules'
 import { MainSkeleton, GameAreaSkeleton, RulesAreaSkeleton, VerticalDivider } from './styles'
 
@@ -28,7 +26,7 @@ function App() {
       
         </RulesAreaSkeleton>
       </MainSkeleton>
-      
+
     </>
   )
 }
