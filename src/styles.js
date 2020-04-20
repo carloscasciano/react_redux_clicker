@@ -49,6 +49,55 @@ export const PossessionsSkeleton = styled.div`
     justify-content: space-around;
 `
 
+export const ArmySkeleton = styled.div`
+    min-width: 300px;
+    max-width: 300px;
+`
+export const EmpireSkeleton = styled.div`
+    display: flex;
+    flex-direction: row;  
+    align-items: baseline;
+    justify-content: space-around;
+`
+export const TerritorySkeleton = styled.div`
+    display: flex;
+    flex-direction: column;  
+    justify-content: space-around;
+`
+
+export const InfoBlock = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    p {
+        font-size: 1.3em;
+        margin: 5px;
+    }
+`
+
+export const BuyEnhancementBlock = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    p {
+        font-size: 1.3em;
+        margin: 5px;
+    }
+`
+
+export const BuyProvinceBlock = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    p {
+        font-size: 0.8em;
+        margin: 3px;
+    }
+`
+
 /* Texts: */
 
 export const MainTitleText = styled.h2`
@@ -65,17 +114,6 @@ export const MiniTitleText = styled.h2`
     margin: 3px;
 `
 
-export const InfoBlock = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    p {
-        font-size: 1.3em;
-        margin: 5px;
-    }
-`
-
 export const RegularText = styled.p`
     color: ${baseColors.textBlack};
     font-size: 1.2em;
@@ -89,7 +127,6 @@ export const RegularList = styled.ul`
         list-style-type: none;
     }
 `
-
 
 /* Dividers: */
 
@@ -107,11 +144,21 @@ export const HorizontalDivider = styled.hr`
 export const LegionaryButton = styled.button`
     border: none;
     background: ${baseColors.red};
-    color: #ffffff ;
+    color: ${baseColors.blue} ;
     padding: 20px;
     border-radius: 6px;
     display: inline-block;
     width: 300px;
+`
+
+export const BuyButton = styled.button`
+    border: none;
+    background: ${baseColors.red};
+    color: ${baseColors.blue};
+    padding: 20px;
+    border-radius: 6px;
+    display: inline-block;
+    width: 60px;
 `
 
 /* Icons: */

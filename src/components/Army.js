@@ -2,7 +2,7 @@ import React from 'react'
 import calculateArmy from '../structure_assets/calculateArmy'
 import armyMapBuilder from '../structure_assets/armyMapBuilder'
 import { connect } from 'react-redux'
-import { MiniTitleText, GameIcon } from '../styles'
+import { ArmySkeleton, MiniTitleText, GameIcon } from '../styles'
 
 
 const mapStateToProps = (state) => {
@@ -17,13 +17,13 @@ function Army(props) {
     const armyToMap = armyMapBuilder(armySize)
 
     return (
-        <div>
+        <ArmySkeleton>
             <MiniTitleText>Army</MiniTitleText>
-            <p>Total Army: {props.legionaries}</p>
+            {/* <p>Total Army: {props.legionaries}</p> */}
             {
               armyToMap.map(el => <GameIcon key={Math.random()} src={`helmets/${el}.png`}/> )   
             }           
-        </div>
+        </ArmySkeleton>
     )
 }
 

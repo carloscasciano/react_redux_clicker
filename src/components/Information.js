@@ -34,7 +34,7 @@ function Information(props) {
                 </InfoBlock>
             </InformationSkeleton>
             <HorizontalDivider/>
-                <p>Alert: {props.message}</p>        
+                <p>{props.message}</p>        
             </>
     
     )

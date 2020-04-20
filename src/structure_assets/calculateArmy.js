@@ -8,8 +8,6 @@ Structure:
 480 Legionaries - 60 Conturbeniun - 6 Century - 1 Cohort
 4800 Legionaries - 600 Conturbeniun - 60 Century - 10 Cohort - 1 Legion
 
-
-
 */
 
 export default function calculateArmy (totalLegionaries) {

@@ -28,15 +28,7 @@ function App() {
       
         </RulesAreaSkeleton>
       </MainSkeleton>
-
-        
-        <Enhancements />
-        <Provincies />
       
-      
-
-
-
     </>
   )
 }

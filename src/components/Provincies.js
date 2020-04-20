@@ -1,6 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { conquerProvincy , alertUser } from '../actions/actions'
+import { MiniTitleText, EmpireSkeleton, TerritorySkeleton , BuyProvinceBlock} from '../styles'
+
+
 
 const checkIfCanConquer = (provinceCurrentPrice, totalLegionaries, expressionIfTrue, expressionIfFalse) => {
     if (provinceCurrentPrice > totalLegionaries) {
@@ -38,31 +41,42 @@ function Provincies(props) {
     return (
         <div>
             
-            <h4>Provincies</h4>
+            <MiniTitleText>Provincies</MiniTitleText>
             <p>Legionaries Needed to Conquer: {props.provincePriceWithBonus} </p>
             <p>Tribute per Province: {props.baseProvinceGold} + Arc Bonus: { Math.round( props.arcBonus/100 * props.baseProvinceGold ) } </p>
             <p>Total Tribute: { (props.baseProvinceGold * props.totalProvincies) + (Math.round( props.arcBonus/100 * props.baseProvinceGold) * props.totalProvincies) }</p>
             
-            <h5>Roman Empire:</h5>
-            {props.provincies
-                .filter(prov => prov.possession === true)
-                .map(prov => 
-                    <div key={Math.random()}>
-                        <p>{prov.provinceName}</p>
-                    </div>
-                    )
-            }
-            
-            <h5>To Conquer:</h5>
-            {props.provincies
-                .filter(prov => prov.possession === false)
-                .map(prov => 
-                    <div key={Math.random()}>
-                        <p>{prov.provinceName}</p>
-                        <button onClick={checkIfCanConquer(props.provincePriceWithBonus, props.legionaries, props.manageConquerProvincy, props.notAvailable)} value={prov.provinceName}>conquer</button>
-                    </div>
-                    )
-            }
+
+            <EmpireSkeleton>
+                <TerritorySkeleton>
+                    <h5>Roman Empire:</h5>
+                    {props.provincies
+                        .filter(prov => prov.possession === true)
+                        .map(prov =>
+                            <div key={Math.random()}>
+                                <p>{prov.provinceName}</p>
+                            </div>
+                            )
+                    }
+                </TerritorySkeleton>
+               
+               <TerritorySkeleton>
+                <h5>To Conquer:</h5>
+                    {props.provincies
+                        .filter(prov => prov.possession === false)
+                        .map(prov => 
+                            <div key={Math.random()}>
+                                <BuyProvinceBlock>
+                                    <p>{prov.provinceName}</p>
+                                    <button onClick={checkIfCanConquer(props.provincePriceWithBonus, props.legionaries, props.manageConquerProvincy, props.notAvailable)} value={prov.provinceName}>conquer</button>
+                                </BuyProvinceBlock>
+                                
+                            </div>
+                            )
+                    }
+               </TerritorySkeleton>
+            </EmpireSkeleton>
+
         </div>
     )
 }

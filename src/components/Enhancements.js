@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { addEnhancement, alertUser } from '../actions/actions'
+import { MiniTitleText, GameIcon, BuyEnhancementBlock, BuyButton } from '../styles'
+
 
 const checkIfCanBuy = (price, totalGold, expressionIfTrue, expressionIfFalse) => {
     if (price > totalGold) {
@@ -31,15 +33,15 @@ const mapDispatchToProps = (dispatch) => {
 function Enhancements(props) {
     return (
         <div>
-            <h4>Enhancements</h4>
+            <MiniTitleText>Enhancements</MiniTitleText>
+
             {props.enhancements.map(enh =>
-                <div key={Math.random()}>
+                <BuyEnhancementBlock key={Math.random()}>
                     <p>{enh.enhancementName}</p>
                     <p>Price: {enh.enhancementPrice}</p>
                     <p>Qty: {enh.enhancementQty}</p>
-                    <button onClick={checkIfCanBuy(enh.enhancementPrice, props.gold, props.manageBuyEnhancement, props.notAvailable) } value={enh.enhancementName} >Buy!</button>
-                </div>
-                
+                    <BuyButton onClick={checkIfCanBuy(enh.enhancementPrice, props.gold, props.manageBuyEnhancement, props.notAvailable) } value={enh.enhancementName} >BUY</BuyButton>
+                </BuyEnhancementBlock>                
                 )
             }
         </div>
