@@ -1,7 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import calculateArmy from '../structure_assets/calculateArmy'
+import armyMapBuilder from '../structure_assets/armyMapBuilder'
 import { conquerProvincy , alertUser } from '../actions/actions'
-import { ProvinceSkeleton, MiniTitleText, EmpireSkeleton, TerritorySkeleton , BuyProvinceBlock, ConquerButton} from '../styles'
+import { ProvinceSkeleton, ArmySkeleton, MiniTitleText, EmpireSkeleton, TerritorySkeleton , BuyProvinceBlock, ConquerButton, GameIcon} from '../styles'
 
 
 
@@ -38,11 +40,17 @@ const mapDispatchToProps = dispatch => {
 }
 
 function Provincies(props) {
+    const armyNeededSize = calculateArmy(props.provincePriceWithBonus)
+    const armyToMap = armyMapBuilder(armyNeededSize)
     return (
         <ProvinceSkeleton>
             
             <MiniTitleText>Provincies</MiniTitleText>
-            <p>Legionaries Needed to Conquer: {props.provincePriceWithBonus} </p>
+            <ArmySkeleton>
+                {
+                armyToMap.map(el => <GameIcon key={Math.random()} src={`helmets/${el}.png`}/> )   
+                }           
+            </ArmySkeleton>
             
 
             <EmpireSkeleton>

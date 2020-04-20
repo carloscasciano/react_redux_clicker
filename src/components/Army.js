@@ -14,13 +14,16 @@ const mapStateToProps = (state) => {
 function Army(props) {
     const armySize = calculateArmy(props.legionaries)
     const armyToMap = armyMapBuilder(armySize)
-
+    
     return (
         <ArmySkeleton>
-            <MiniTitleText>Army</MiniTitleText>
-            {
-              armyToMap.map(el => <GameIcon key={Math.random()} src={`helmets/${el}.png`}/> )   
-            }           
+            <MiniTitleText>Army:</MiniTitleText>
+            <div>
+                {
+                armyToMap.map(el => <GameIcon key={Math.random()} src={`helmets/${el}.png`}/> )   
+                } 
+            </div>
+                      
         </ArmySkeleton>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { addEnhancement, alertUser } from '../actions/actions'
-import { EnhancementSkeleton, MiniTitleText, GameIcon, BuyEnhancementBlock, BuyButton, HorizontalDivider } from '../styles'
+import { EnhancementSkeleton, EnhancementShopSkeleton, EnhancementBoughtSkeleton , MiniTitleText, GameIcon, BuyEnhancementBlock, BuyButton, HorizontalDivider } from '../styles'
 import enhancementMapBuilder from '../structure_assets/enhancementMapBuilder'
 
 
@@ -39,26 +39,27 @@ function Enhancements(props) {
 
                 <MiniTitleText>Enhancements</MiniTitleText>
 
-                {props.enhancements.map(enh =>
-                    <BuyEnhancementBlock key={Math.random()}>
-                        <GameIcon src={`enhancements/${enh.enhancementName}.png`} />
-                        <p>{enh.enhancementPrice} Gold </p>
-                        <BuyButton onClick={checkIfCanBuy(enh.enhancementPrice, props.gold, props.manageBuyEnhancement, props.notAvailable) } 
-                                value={enh.enhancementName}
-                        >
-                            $
-                        </BuyButton>
-                    </BuyEnhancementBlock>              
-                    )
-                }
+                <EnhancementShopSkeleton>
+                    {props.enhancements.map(enh =>
+                        <BuyEnhancementBlock key={Math.random()}>
+                            <GameIcon src={`enhancements/${enh.enhancementName}.png`} />
+                            <p>{enh.enhancementPrice} Gold </p>
+                            <BuyButton onClick={checkIfCanBuy(enh.enhancementPrice, props.gold, props.manageBuyEnhancement, props.notAvailable) } 
+                                    value={enh.enhancementName}
+                            >
+                                $
+                            </BuyButton>
+                        </BuyEnhancementBlock>              
+                        )
+                    }
+                </EnhancementShopSkeleton>
 
                 <HorizontalDivider/>
 
-                {enhancementsToMap.map(enh => 
-                        
-                            <GameIcon src={`enhancements/${enh}.png`} key={Math.random()} />          
-                    )
-                }
+                <EnhancementBoughtSkeleton>
+                    {enhancementsToMap.map(enh =><GameIcon src={`enhancements/${enh}.png`} key={Math.random()} />)}
+                </EnhancementBoughtSkeleton>
+                
 
             </EnhancementSkeleton>
 

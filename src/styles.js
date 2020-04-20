@@ -25,6 +25,7 @@ export const MainSkeleton = styled.div`
     background: ${baseColors.backgroundWhite};
 `
 export const GameAreaSkeleton = styled.div`
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -50,15 +51,31 @@ export const PossessionsSkeleton = styled.div`
 `
 
 export const ArmySkeleton = styled.div`
-    min-width: 300px;
-    max-width: 300px;
+    display: flex;
+    flex-direction: column;  
+    justify-content: flex-start;
+    height: 80px;
+
 `
 
 export const EnhancementSkeleton = styled.div`
-    min-width: 300px;
-    max-width: 300px;
+    display: flex;
+    flex-direction: column;  
+    justify-content: flex-start;
 `
 
+export const EnhancementShopSkeleton = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+`
+
+export const EnhancementBoughtSkeleton = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+`
 
 export const EmpireSkeleton = styled.div`
     display: flex;
@@ -97,7 +114,8 @@ export const BuyEnhancementBlock = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 5px;
+    margin-left: 35px;
+    margin-right: 35px;
     p {
         font-size: 1.3em;
         margin: 5px;

@@ -7,9 +7,7 @@ import Provincies from './Provincies'
 export default function Possessions() {
     return (
         <PossessionsSkeleton>
-            <Army/>
-            <VerticalDivider/>
-            <Enhancements/>
+            
             <VerticalDivider/>
             <Provincies/>
         </PossessionsSkeleton>

@@ -3,7 +3,7 @@ import { createStore } from 'redux'
 const startGameRomanEmpire = [
     {
       "legionaries": 0,
-      "gold": 100,
+      "gold": 10000000,
       "date": 1,
       "daysUntilActionsChange": 14,
       "message": "Grow your Empire!",
