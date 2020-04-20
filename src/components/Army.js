@@ -16,17 +16,13 @@ function Army(props) {
     const armySize = calculateArmy(props.legionaries)
     const armyToMap = armyMapBuilder(armySize)
 
-    
-    console.log(armySize)
     return (
         <div>
             <MiniTitleText>Army</MiniTitleText>
             <p>Total Army: {props.legionaries}</p>
             {
-              armyToMap.map(el => <GameIcon src={`helmets/${el}.png`}/> )
-                
-            }
-            
+              armyToMap.map(el => <GameIcon key={Math.random()} src={`helmets/${el}.png`}/> )   
+            }           
         </div>
     )
 }
