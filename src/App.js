@@ -5,9 +5,6 @@ import romanEmpire from './reducers/empireReducer'
 
 // components
 import GameArea from './components/GameArea'
-import Information from './components/Information'
-import CommandCentral from './components/CommandCentral'
-import Army from './components/Army'
 import Enhancements from './components/Enhancements'
 import Provincies from './components/Provincies'
 import Rules from './components/Rules'
@@ -33,7 +30,6 @@ function App() {
       </MainSkeleton>
 
         
-        <Army />
         <Enhancements />
         <Provincies />
       

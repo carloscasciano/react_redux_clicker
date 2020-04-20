@@ -43,12 +43,25 @@ export const InformationSkeleton = styled.div`
     flex-direction: row;
 `
 
+export const PossessionsSkeleton = styled.div`
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-around;
+`
+
 /* Texts: */
 
 export const MainTitleText = styled.h2`
     text-align: center;
     color: ${baseColors.red};
     font-size: 2.5em;
+    margin: 3px;
+`
+
+export const MiniTitleText = styled.h2`
+    text-align: center;
+    color: ${baseColors.red};
+    font-size: 1.5em;
     margin: 3px;
 `
 
@@ -99,5 +112,12 @@ export const LegionaryButton = styled.button`
     border-radius: 6px;
     display: inline-block;
     width: 300px;
+`
 
+/* Icons: */
+
+export const GameIcon = styled.img`
+    width: 30px;
+    height: 30px;
+    margin: 15px; 
 `

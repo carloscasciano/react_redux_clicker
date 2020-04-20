@@ -1,5 +1,8 @@
 import React from 'react'
+import calculateArmy from '../structure_assets/calculateArmy'
+import armyMapBuilder from '../structure_assets/armyMapBuilder'
 import { connect } from 'react-redux'
+import { MiniTitleText, GameIcon } from '../styles'
 
 
 const mapStateToProps = (state) => {
@@ -9,12 +12,21 @@ const mapStateToProps = (state) => {
 }
 
 
-
 function Army(props) {
+    const armySize = calculateArmy(props.legionaries)
+    const armyToMap = armyMapBuilder(armySize)
+
+    
+    console.log(armySize)
     return (
         <div>
-            <h4>Army</h4>
+            <MiniTitleText>Army</MiniTitleText>
             <p>Total Army: {props.legionaries}</p>
+            {
+              armyToMap.map(el => <GameIcon src={`helmets/${el}.png`}/> )
+                
+            }
+            
         </div>
     )
 }

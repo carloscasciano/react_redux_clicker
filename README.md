@@ -64,7 +64,6 @@ build actions
 connect actions to reducers
 
 
-
 Step 3 - Components
 
 
@@ -88,7 +87,16 @@ main logs
 Step 4 - Styling
 
 styles.js
+skeletons
+
+
+
+Step 5 - Test and Adapt
+
+
 
 Extras:
 
 Roman organization: https://www.youtube.com/watch?v=Rcbedan5R1s
+https://www.flaticon.com/free-icon/roman-helmet_2720080
+https://www.flaticon.com/free-icon/roman_2651172?term=roman&page=1&position=10

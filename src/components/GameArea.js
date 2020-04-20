@@ -2,6 +2,7 @@ import React from 'react'
 import Information from './Information'
 import {  MainTitleText, HorizontalDivider } from '../styles'
 import CommandCentral from './CommandCentral'
+import Possessions from './Possessions'
 
 export default function GameArea() {
     return (
@@ -12,6 +13,7 @@ export default function GameArea() {
             <HorizontalDivider/>
             <CommandCentral/>
             <HorizontalDivider/>
+            <Possessions/>
         </>
     )
 }
