@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { addEnhancement, alertUser } from '../actions/actions'
 import { MiniTitleText, GameIcon, BuyEnhancementBlock, BuyButton } from '../styles'
+import enhancementMapBuilder from '../structure_assets/enhancementMapBuilder'
 
 
 const checkIfCanBuy = (price, totalGold, expressionIfTrue, expressionIfFalse) => {
@@ -31,17 +32,24 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 function Enhancements(props) {
+    const enhancementsToMap = enhancementMapBuilder(props.enhancements)
     return (
         <div>
             <MiniTitleText>Enhancements</MiniTitleText>
 
             {props.enhancements.map(enh =>
                 <BuyEnhancementBlock key={Math.random()}>
-                    <p>{enh.enhancementName}</p>
-                    <p>Price: {enh.enhancementPrice}</p>
-                    <p>Qty: {enh.enhancementQty}</p>
+                    <GameIcon src={`enhancements/${enh.enhancementName}.png`} />
+                    <p>{enh.enhancementPrice} Gold </p>
                     <BuyButton onClick={checkIfCanBuy(enh.enhancementPrice, props.gold, props.manageBuyEnhancement, props.notAvailable) } value={enh.enhancementName} >BUY</BuyButton>
-                </BuyEnhancementBlock>                
+                </BuyEnhancementBlock>              
+                )
+            }
+
+            {enhancementsToMap.map(enh => 
+                    
+                        <GameIcon src={`enhancements/${enh}.png`} key={Math.random()} />
+                    
                 )
             }
         </div>

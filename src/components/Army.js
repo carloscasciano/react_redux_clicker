@@ -11,7 +11,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-
 function Army(props) {
     const armySize = calculateArmy(props.legionaries)
     const armyToMap = armyMapBuilder(armySize)
