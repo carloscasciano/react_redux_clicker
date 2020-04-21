@@ -132,6 +132,7 @@ export const InfoBlock = styled.div`
     p {
         font-size: 1.3em;
         margin: 5px;
+        font-family: 'Muli', sans-serif;
     }
 `
 
@@ -145,6 +146,7 @@ export const BuyEnhancementBlock = styled.div`
     p {
         font-size: 1.3em;
         margin: 5px;
+        font-family: 'Muli', sans-serif;
     }
 `
 
@@ -157,6 +159,7 @@ export const BuyProvinceBlock = styled.div`
     p {
         font-size: 0.8em;
         margin: 3px;
+        font-family: 'Muli', sans-serif;
     };
 `
 
@@ -167,6 +170,7 @@ export const MainTitleText = styled.h2`
     color: ${baseColors.red};
     font-size: 2.5em;
     margin: 3px;
+    font-family: 'Muli', sans-serif;
 `
 
 export const MiniTitleText = styled.h2`
@@ -174,20 +178,24 @@ export const MiniTitleText = styled.h2`
     color: ${baseColors.red};
     font-size: 1.5em;
     margin: 3px;
+    font-family: 'Muli', sans-serif;
 `
 
 export const RegularText = styled.p`
     color: ${baseColors.textBlack};
     font-size: 1.2em;
     margin: 5px;
+    font-family: 'Muli', sans-serif;
 `
 
 export const RegularList = styled.ul`
     color: ${baseColors.textBlack};
     font-size: 1em;
+    font-family: 'Muli', sans-serif;
     li {
         color: ${baseColors.textBlack};
         list-style-type: none;
+        font-family: 'Muli', sans-serif;
     }
 `
 

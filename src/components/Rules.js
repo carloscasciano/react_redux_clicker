@@ -68,7 +68,7 @@ function Rules(props) {
                 <RegularText>Conquer All 15 Territories</RegularText>
                 <RegularList>
                     <li>Conquer Provinces with Legionaries</li>
-                    <li>Click GROW, get legionaries and passes a day</li>
+                    <li>Click GROW: get legionaries and passes a day</li>
                 </RegularList>
                 
                 
