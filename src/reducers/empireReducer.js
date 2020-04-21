@@ -120,6 +120,8 @@ const startGameRomanEmpire = [
                 state[0]["gold"] = Math.round(state[0]["gold"] + state[0]["provinceGoldWithBonus"] * totalProvincesConquered)
                 state[0]["baseProvincePrice"] = Math.round(state[0]["baseProvincePrice"] * multiplierFactor)
                 state[0]["baseProvinceGold"] = Math.round( state[0]["baseProvinceGold"] * multiplierFactor )
+                state[0].provincePriceWithBonus = Math.round (state[0].baseProvincePrice * (1 - totalAqueducts /  100 * bonusPercentual))
+                state[0].provinceGoldWithBonus = Math.round (state[0].baseProvinceGold) * (1 + totalRomanArc / 100 * bonusPercentual)
             }
             return state
 
@@ -145,6 +147,7 @@ const startGameRomanEmpire = [
             provincyToConquer["possession"] = true
 
             state[0]["legionaries"] = state[0]["legionaries"] - state[0].provincePriceWithBonus
+
             state[0]["roundLog"] = state[0]["roundLog"].concat("Day " + state[0]["date"] + " : " + provincyToConquer["provinceName"] + " conquered")
             return state
 

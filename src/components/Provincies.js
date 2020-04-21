@@ -8,7 +8,6 @@ import { ProvinceSkeleton, MiniTitleText, EmpireSkeleton,
         RegularText, ConqueredTerritorySkeleton, ToConquerTerritorySkeleton } from '../styles'
 
 
-
 const checkIfCanConquer = (provinceCurrentPrice, totalLegionaries, expressionIfTrue, expressionIfFalse) => {
     if (provinceCurrentPrice > totalLegionaries) {
         return expressionIfFalse
