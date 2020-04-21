@@ -18,6 +18,15 @@ const baseColors =
 
 /* Skeletons: */
 
+export const WinningConditionSkeleton = styled.div`
+    height: 80px;
+    width: 100%;
+    display: ${props => props.win ? "flex" : "none"};
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+
 export const MainSkeleton = styled.div`
     display: flex;
     flex-direction: row;
@@ -42,6 +51,7 @@ export const RulesAreaSkeleton = styled.div`
     background: ${baseColors.backgroundWhite};
 `
 export const InformationSkeleton = styled.div`
+
     display: flex;
     flex-direction: row;
 `
