@@ -38,35 +38,7 @@ const startGameRomanEmpire = [
             "possession": false
         },
         {
-            "provinceName": "Asia Minor",
-            "possession": false
-        },
-        {
-            "provinceName": "Achaea",
-            "possession": false
-        },
-        {
-            "provinceName": "Cyprus",
-            "possession": false
-        },
-        {
             "provinceName": "Crete",
-            "possession": false
-        },
-        {
-            "provinceName": "Cyrenaica",
-            "possession": false
-        },
-        {
-            "provinceName": "Gallia Narbonensis",
-            "possession": false
-        },
-        {
-            "provinceName": "Lycia Pamphylia",
-            "possession": false
-        },
-        {
-            "provinceName": "Macedonia & Epirus",
             "possession": false
         },
         {
@@ -74,23 +46,11 @@ const startGameRomanEmpire = [
             "possession": false
         },
         {
-            "provinceName": "Sicilia",
-            "possession": false
-        },
-        {
             "provinceName": "Aquitania",
             "possession": false
         },
         {
-            "provinceName": "Gallia",
-            "possession": false
-        },
-        {
             "provinceName": "Arabia",
-            "possession": false
-        },
-        {
-            "provinceName": "Baetica",
             "possession": false
         },
         {
@@ -106,27 +66,7 @@ const startGameRomanEmpire = [
             "possession": false
         },
         {
-            "provinceName": "Cilicia",
-            "possession": false
-        },
-        {
-            "provinceName": "Dacia",
-            "possession": false
-        },
-        /*{
-            "provinceName": "Dalmatia",
-            "possession": false
-        },
-        {
-            "provinceName": "Galatia",
-            "possession": false
-        },
-        {
-            "provinceName": "Germania Inferior",
-            "possession": false
-        },
-        {
-            "provinceName": "Germania Superior",
+            "provinceName": "Germania",
             "possession": false
         },
         {
@@ -142,73 +82,17 @@ const startGameRomanEmpire = [
             "possession": false
         },
         {
-            "provinceName": "Moesia Inferior",
-            "possession": false
-        },
-        {
-            "provinceName": "Moesia Superior",
-            "possession": false
-        },
-        {
-            "provinceName": "Noricum",
-            "possession": false
-        },
-        {
-            "provinceName": "Numidia",
-            "possession": false
-        },
-        {
             "provinceName": "Judaea",
             "possession": false
         },
         {
-            "provinceName": "Pannonia Inferior",
-            "possession": false
-        },
-        {
-            "provinceName": "Pannonia Superior",
-            "possession": false
-        },
-        {
-            "provinceName": "Pontus & Bithynia",
-            "possession": false
-        },
-        {
-            "provinceName": "Raetia",
-            "possession": false
-        },
-        {
-            "provinceName": "Syria",
-            "possession": false
-        },
-        {
-            "provinceName": "Thracia",
+            "provinceName": "Gallia",
             "possession": false
         },
         {
             "provinceName": "Aegyptus",
             "possession": false
-        },
-        {
-            "provinceName": "Alpes Cottiae",
-            "possession": false
-        },
-        {
-            "provinceName": "Alpes Penninae",
-            "possession": false
-        },
-        {
-            "provinceName": "Alpes Maritimae",
-            "possession": false
-        },
-        {
-            "provinceName": "Mauretania Caesarensis",
-            "possession": false
-        },
-        {
-            "provinceName": "Mauretania Tingitana",
-            "possession": false
-        }   */
+        }  
       ],
       "roundLog": []
     }
