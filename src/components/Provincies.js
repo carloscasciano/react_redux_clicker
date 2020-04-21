@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import calculateArmy from '../structure_assets/calculateArmy'
 import armyMapBuilder from '../structure_assets/armyMapBuilder'
 import { conquerProvincy , alertUser } from '../actions/actions'
-import { ProvinceSkeleton, ArmySkeleton, MiniTitleText, EmpireSkeleton, TerritorySkeleton , BuyProvinceBlock, ConquerButton, GameIcon} from '../styles'
+import { ProvinceSkeleton, MiniTitleText, EmpireSkeleton, TerritorySkeleton , BuyProvinceBlock, ConquerButton, GameIcon, HorizontalDivider, RegularText, ConqueredTerritorySkeleton, ToConquerTerritorySkeleton, RegularList} from '../styles'
 
 
 
@@ -46,47 +46,47 @@ function Provincies(props) {
         <ProvinceSkeleton>
             
             <MiniTitleText>Provincies</MiniTitleText>
-            <ArmySkeleton>
+            <HorizontalDivider/>
+            <TerritorySkeleton>
+                    <RegularText>Roman Empire - Total Tribute: { (props.baseProvinceGold * props.totalProvincies) + (Math.round( props.arcBonus/100 * props.baseProvinceGold) * props.totalProvincies) }</RegularText>
+                    <ConqueredTerritorySkeleton>
+                        {props.provincies
+                            .filter(prov => prov.possession === true)
+                            .map(prov =>
+                                <div key={Math.random()}>
+                                    <p>| {prov.provinceName} | </p>
+                                </div>
+                                )
+                        }
+                    </ConqueredTerritorySkeleton>                    
+            </TerritorySkeleton>
+            <HorizontalDivider/>
+
+            <RegularText>Legionaries Needed To Conquer:</RegularText>
+            <div>
                 {
-                armyToMap.map(el => <GameIcon key={Math.random()} src={`helmets/${el}.png`}/> )   
-                }           
-            </ArmySkeleton>
+                    armyToMap.map(el => <GameIcon key={Math.random()} src={`helmets/${el}.png`}/> )   
+                }   
+            </div>
             
-
             <EmpireSkeleton>
-                <TerritorySkeleton>
-                    <h5>Roman Empire</h5>
-                    <p>Tribute per Province: {props.baseProvinceGold} + Arc Bonus: { Math.round( props.arcBonus/100 * props.baseProvinceGold ) } </p>
-                    <p>Total Tribute: { (props.baseProvinceGold * props.totalProvincies) + (Math.round( props.arcBonus/100 * props.baseProvinceGold) * props.totalProvincies) }</p>
-
+                <ToConquerTerritorySkeleton>
                     {props.provincies
-                        .filter(prov => prov.possession === true)
-                        .map(prov =>
-                            <div key={Math.random()}>
-                                <p>{prov.provinceName}</p>
-                            </div>
-                            )
-                    }
-                </TerritorySkeleton>
-               
-               <TerritorySkeleton>
-                <h5>To Conquer</h5>
-                    {props.provincies
-                        .filter(prov => prov.possession === false)
-                        .map(prov => 
-                            <div key={Math.random()}>
-                                <BuyProvinceBlock>
-                                    <p>{prov.provinceName}</p>
-                                    <ConquerButton onClick={checkIfCanConquer(props.provincePriceWithBonus, props.legionaries, props.manageConquerProvincy, props.notAvailable)} 
-                                            value={prov.provinceName}
-                                    />
-                                </BuyProvinceBlock>
-                                
-                            </div>
-                            )
-                    }
-               </TerritorySkeleton>
+                            .filter(prov => prov.possession === false)
+                            .map(prov => 
+                                <div key={Math.random()}>
+                                    <BuyProvinceBlock>
+                                        <RegularText>{prov.provinceName}</RegularText>
+                                        <ConquerButton onClick={checkIfCanConquer(props.provincePriceWithBonus, props.legionaries, props.manageConquerProvincy, props.notAvailable)} 
+                                                value={prov.provinceName}
+                                        />
+                                    </BuyProvinceBlock>
+                                </div>
+                                )
+                        }
+                </ToConquerTerritorySkeleton>
             </EmpireSkeleton>
+            <HorizontalDivider/>
 
         </ProvinceSkeleton>
     )

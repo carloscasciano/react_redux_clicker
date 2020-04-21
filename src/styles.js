@@ -86,16 +86,32 @@ export const EmpireSkeleton = styled.div`
 export const TerritorySkeleton = styled.div`
     display: flex;
     flex-direction: column;  
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 `
 
 export const ProvinceSkeleton = styled.div`
     display: flex;
     flex-direction: column;  
     justify-content: center;
-    align-content: space-between;
-    color: black;
+    align-content: center;
+    align-items: center;
     margin: 5px;
+`
+
+export const ConqueredTerritorySkeleton = styled.div`
+    display: flex;
+    flex-direction: row;  
+    justify-content: center;
+    flex-wrap: wrap;
+`
+
+export const ToConquerTerritorySkeleton = styled.div`
+    display: flex;
+    flex-direction: row;  
+    justify-content: center;
+    flex-wrap: wrap;
 `
 
 export const InfoBlock = styled.div`
@@ -168,6 +184,7 @@ export const RegularList = styled.ul`
 
 export const VerticalDivider = styled.hr`
     border-left: 2px dotted ${baseColors.red};
+    margin: 10px;
 `
 
 export const HorizontalDivider = styled.hr`

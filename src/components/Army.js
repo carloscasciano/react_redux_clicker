@@ -22,8 +22,7 @@ function Army(props) {
                 {
                 armyToMap.map(el => <GameIcon key={Math.random()} src={`helmets/${el}.png`}/> )   
                 } 
-            </div>
-                      
+            </div>                    
         </ArmySkeleton>
     )
 }

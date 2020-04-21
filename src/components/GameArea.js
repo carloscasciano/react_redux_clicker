@@ -4,7 +4,7 @@ import {  MainTitleText, HorizontalDivider } from '../styles'
 import CommandCentral from './CommandCentral'
 import Army from './Army'
 import Enhancements from './Enhancements'
-import Possessions from './Possessions'
+import Provincies from './Provincies'
 
 export default function GameArea() {
     return (
@@ -19,7 +19,7 @@ export default function GameArea() {
             <HorizontalDivider/>
             <Enhancements/>
             <HorizontalDivider/>
-            <Possessions/>
+            <Provincies/>
         </>
     )
 }

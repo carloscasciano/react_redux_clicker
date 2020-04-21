@@ -8,7 +8,7 @@ export default function Possessions() {
     return (
         <PossessionsSkeleton>
             
-            <VerticalDivider/>
+            
             <Provincies/>
         </PossessionsSkeleton>
     )
