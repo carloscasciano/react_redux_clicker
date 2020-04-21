@@ -22,28 +22,28 @@ function Rules(props) {
                     
                 </GameIconHelper>
                 <GameIconHelper>
-                    <p>8</p>
+                    <p>3</p>
                     <img src={`helmets/legionary.png`} alt={"legionary"}></img>
                     <p>= 1</p>
                     <img src={`helmets/conturbeniun.png`} alt={"conturbeniun"}></img>
                     <p>Conturbeniun</p>
                 </GameIconHelper>
                 <GameIconHelper>
-                    <p>10</p>
+                    <p>3</p>
                     <img src={`helmets/conturbeniun.png`} alt={"conturbeniun"}></img>
                     <p>= 1</p>
                     <img src={`helmets/century.png`} alt={"century"}></img>
                     <p>Century</p>
                 </GameIconHelper>
                 <GameIconHelper>
-                    <p>6</p>
+                    <p>3</p>
                     <img src={`helmets/century.png`} alt={"century"}></img>
                     <p>= 1</p>
                     <img src={`helmets/cohort.png`} alt={"cohort"}></img>
                     <p>Cohort</p>
                 </GameIconHelper>
                 <GameIconHelper>
-                    <p>10</p>
+                    <p>5</p>
                     <img src={`helmets/cohort.png`} alt={"cohort"}></img>
                     <p>= 1</p>
                     <img src={`helmets/legion.png`} alt={"legion"}></img>
@@ -51,34 +51,26 @@ function Rules(props) {
                 </GameIconHelper>
                 <GameIconHelper>
                     <GameIcon src={`enhancements/Roman Bridge.png`}></GameIcon>
-                    <p>= 1 extra legionary per Bridge</p>
+                    <p> 1 legionary per Bridge</p>
                 </GameIconHelper>
                 <GameIconHelper>
                     <GameIcon src={`enhancements/Roman Arc.png`}></GameIcon>
-                    <p>= +3pp gold per Arc</p>
+                    <p> +3pp gold per Arc</p>
                 </GameIconHelper>
                 <GameIconHelper>
                     <GameIcon src={`enhancements/Aqueduct.png`}></GameIcon>
-                    <p>= -3pp on needed Legionaries per Aqueduct</p>
+                    <p> -3pp on needed Legionaries per Aqueduct</p>
                 </GameIconHelper>
                  
                 <HorizontalDivider/>
 
                 <MiniTitleText>Rules</MiniTitleText>
                 <RegularText>Conquer All 15 Territories</RegularText>
-                <RegularList>
-                    <li>Conquer Provinces with Legionaries</li>
-                    <li>Click GROW: get legionaries and passes a day</li>
-                </RegularList>
-                
-                
-                <RegularText>On Tribute Day:</RegularText>
-                <RegularList>
-                    <li>Provinces pays you gold</li>
-                    <li>Necessary legionaries raises</li>
-                </RegularList>
+                <RegularText>Conquer Provinces with Legionaries</RegularText>
+                <RegularText>GROW: Get Legionaries, Pass Day</RegularText>       
+                <RegularText>Tribute Day: Get Gold, Higher Difficult</RegularText>
                 <RegularText>Gold buys improvements to Rome</RegularText>
-                <RegularText>When you buy improvement, prices double.</RegularText>
+                <RegularText>Buy improvement, double price</RegularText>
 
                 <HorizontalDivider/>
 

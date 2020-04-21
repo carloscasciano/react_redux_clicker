@@ -46,10 +46,10 @@ function Provincies(props) {
     return (
         <ProvinceSkeleton>
             
-            <MiniTitleText>Provincies</MiniTitleText>
+            <MiniTitleText>Roman Empire</MiniTitleText>
             
             <TerritorySkeleton>
-                    <RegularText>Roman Empire - Total Tribute: { (props.baseProvinceGold * props.totalProvincies) + (Math.round( props.arcBonus/100 * props.baseProvinceGold) * props.totalProvincies) }</RegularText>
+                    <RegularText>Total Tribute: { (props.baseProvinceGold * props.totalProvincies) + (Math.round( props.arcBonus/100 * props.baseProvinceGold) * props.totalProvincies) }</RegularText>
                     <ConqueredTerritorySkeleton>
                         {props.provincies
                             .filter(prov => prov.possession === true)

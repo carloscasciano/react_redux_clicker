@@ -137,7 +137,7 @@ const startGameRomanEmpire = [
             state[0]["gold"] = state[0]["gold"] + valueToManage * -1
             enhancementToAdd["enhancementQty"] = enhancementToAdd["enhancementQty"] + 1
             enhancementToAdd["enhancementPrice"] = enhancementToAdd["enhancementPrice"] * 2
-            state[0]["roundLog"] = state[0]["roundLog"].concat("Day " + state[0]["date"] + " : " + enhancementToAdd["enhancementName"] + " bought")
+            state[0]["roundLog"] = state[0]["roundLog"].concat("Day " + state[0]["date"] + " : " + enhancementToAdd["enhancementName"] + " built")
             return state
 
         case 'CONQUER_PROVINCY':
