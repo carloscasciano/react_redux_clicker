@@ -17,7 +17,7 @@ function Army(props) {
     
     return (
         <ArmySkeleton>
-            <MiniTitleText>Army:</MiniTitleText>
+            <MiniTitleText>Army</MiniTitleText>
             <div>
                 {
                 armyToMap.map(el => <GameIcon key={Math.random()} src={`helmets/${el}.png`}/> )   

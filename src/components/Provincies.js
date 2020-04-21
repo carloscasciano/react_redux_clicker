@@ -48,7 +48,7 @@ function Provincies(props) {
         <ProvinceSkeleton>
             
             <MiniTitleText>Provincies</MiniTitleText>
-            <HorizontalDivider/>
+            
             <TerritorySkeleton>
                     <RegularText>Roman Empire - Total Tribute: { (props.baseProvinceGold * props.totalProvincies) + (Math.round( props.arcBonus/100 * props.baseProvinceGold) * props.totalProvincies) }</RegularText>
                     <ConqueredTerritorySkeleton>

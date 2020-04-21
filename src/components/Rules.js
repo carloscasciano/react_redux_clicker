@@ -1,7 +1,14 @@
 import React from 'react'
-import { RulesEskeleton, RegularText, RegularList, MiniTitleText, GameIcon, GameIconHelper } from '../styles'
+import { connect } from 'react-redux'
+import { RulesEskeleton, RegularText, RegularList, MiniTitleText, GameIcon, GameIconHelper, HorizontalDivider } from '../styles'
 
-export default function Rules() {
+const mapStateToProps = (state) => {
+    return {
+        roundLog: state[0].roundLog
+    }
+}
+
+function Rules(props) {
     return (
         
             <RulesEskeleton>
@@ -42,13 +49,28 @@ export default function Rules() {
                     <img src={`helmets/legion.png`} alt={"legion"}></img>
                     <p>Legion</p>
                 </GameIconHelper>
-                
-                
+                <GameIconHelper>
+                    <GameIcon src={`enhancements/Roman Bridge.png`}></GameIcon>
+                    <p>= 1 extra legionary per Bridge</p>
+                </GameIconHelper>
+                <GameIconHelper>
+                    <GameIcon src={`enhancements/Roman Arc.png`}></GameIcon>
+                    <p>= +3pp gold per Arc</p>
+                </GameIconHelper>
+                <GameIconHelper>
+                    <GameIcon src={`enhancements/Aqueduct.png`}></GameIcon>
+                    <p>= -3pp on needed Legionaries per Aqueduct</p>
+                </GameIconHelper>
+                 
+                <HorizontalDivider/>
 
                 <MiniTitleText>Rules</MiniTitleText>
                 <RegularText>Conquer All 15 Territories</RegularText>
-                <RegularText>Conquer Provinces with Legionaries</RegularText>
-                <RegularText>Click GROW, get legionaries and passes a day</RegularText>
+                <RegularList>
+                    <li>Conquer Provinces with Legionaries</li>
+                    <li>Click GROW, get legionaries and passes a day</li>
+                </RegularList>
+                
                 
                 <RegularText>On Tribute Day:</RegularText>
                 <RegularList>
@@ -57,19 +79,20 @@ export default function Rules() {
                 </RegularList>
                 <RegularText>Gold buys improvements to Rome</RegularText>
                 <RegularText>When you buy improvement, prices double.</RegularText>
-                <RegularText>Improvements details:</RegularText>
-                <RegularList>
-                    <li>Bridge: 1 extra legionary per click</li>
-                    <li>Roman Arch: +3pp of gold from provinces</li>
-                    <li>Aqueduct: -3pp on necessary legionaries</li>
-                </RegularList>
-            </RulesEskeleton>
-            
-            
-    
-                
-        
+
+                <HorizontalDivider/>
+
+                <MiniTitleText>Log</MiniTitleText>
+                {props.roundLog.map(entry=><p key={Math.random()}>{entry}</p>)}
+            </RulesEskeleton>      
     )
 }
 
-{/* {props.roundLog.map(entry=><p key={Math.random()}>{entry}</p>)} */}
+export default connect(
+    mapStateToProps, 
+    null,
+    null,
+    {
+        pure: false
+    }
+)(Rules)

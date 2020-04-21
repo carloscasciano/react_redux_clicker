@@ -179,6 +179,7 @@ export const MiniTitleText = styled.h2`
 export const RegularText = styled.p`
     color: ${baseColors.textBlack};
     font-size: 1.2em;
+    margin: 5px;
 `
 
 export const RegularList = styled.ul`
