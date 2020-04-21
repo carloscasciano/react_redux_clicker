@@ -14,6 +14,7 @@ function App() {
     <>
 
       <MainSkeleton>
+
         <GameAreaSkeleton>
           <GameArea />
         </GameAreaSkeleton>
@@ -21,10 +22,9 @@ function App() {
         <VerticalDivider/>
 
         <RulesAreaSkeleton>
-
-          <Rules/>
-      
+          <Rules/>   
         </RulesAreaSkeleton>
+        
       </MainSkeleton>
 
     </>

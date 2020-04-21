@@ -35,8 +35,10 @@ export const GameAreaSkeleton = styled.div`
 `
 export const RulesAreaSkeleton = styled.div`
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: column; 
+    align-items: baseline;
+    justify-content: flex-start;
+    align-content: flex-start;
     background: ${baseColors.backgroundWhite};
 `
 export const InformationSkeleton = styled.div`
@@ -112,6 +114,14 @@ export const ToConquerTerritorySkeleton = styled.div`
     flex-direction: row;  
     justify-content: center;
     flex-wrap: wrap;
+`
+
+export const RulesEskeleton = styled.div`
+    display: flex;
+    flex-direction: column; 
+    align-items: baseline;
+    justify-content: flex-start;
+    align-content: flex-start;
 `
 
 export const InfoBlock = styled.div`
@@ -233,4 +243,19 @@ export const GameIcon = styled.img`
     width: 30px;
     height: 30px;
     margin: 15px; 
+`
+
+export const GameIconHelper = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    p {
+        color: ${baseColors.textBlack};
+        font-size: 1.0em;
+    };
+    img {
+        width: 20px;
+        height: 20px;
+        margin: 10px;
+    }
 `

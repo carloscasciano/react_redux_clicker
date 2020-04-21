@@ -3,7 +3,9 @@ import { connect } from 'react-redux'
 import calculateArmy from '../structure_assets/calculateArmy'
 import armyMapBuilder from '../structure_assets/armyMapBuilder'
 import { conquerProvincy , alertUser } from '../actions/actions'
-import { ProvinceSkeleton, MiniTitleText, EmpireSkeleton, TerritorySkeleton , BuyProvinceBlock, ConquerButton, GameIcon, HorizontalDivider, RegularText, ConqueredTerritorySkeleton, ToConquerTerritorySkeleton, RegularList} from '../styles'
+import { ProvinceSkeleton, MiniTitleText, EmpireSkeleton, 
+        TerritorySkeleton , BuyProvinceBlock, ConquerButton, GameIcon, HorizontalDivider, 
+        RegularText, ConqueredTerritorySkeleton, ToConquerTerritorySkeleton } from '../styles'
 
 
 
