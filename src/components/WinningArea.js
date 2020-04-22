@@ -19,7 +19,7 @@ function WinningArea(props) {
                 <WinningConditionSkeleton win >
                 <HorizontalDivider/>
                 
-                    <p>Congratulations! You won the game in {props.date} days! </p>
+                    <p>Congratulations! You won the game in {props.date} days! Can it be done in less than 229 days? Press f5 to restart! </p>
                 
                 <HorizontalDivider/>
                 </WinningConditionSkeleton>

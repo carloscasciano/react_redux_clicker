@@ -79,9 +79,12 @@ export const EnhancementShopSkeleton = styled.div`
 `
 
 export const EnhancementBoughtSkeleton = styled.div`
+    
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+    align-content: center;
     flex-wrap: wrap;
 `
 
@@ -214,9 +217,9 @@ export const VerticalDivider = styled.hr`
 `
 
 export const HorizontalDivider = styled.hr`
-    width: 100%;
+    width: 80%;
     border-right: 3px ${baseColors.red};
-    opacity: 0.2;
+    opacity: 0.15;
 `
 
 /* Buttons: */

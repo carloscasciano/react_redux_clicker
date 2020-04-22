@@ -18,7 +18,6 @@ export const addEnhancement = (enhancementName) => {
 }
 
 export const conquerProvince = (provinceName) => {
-    console.log(provinceName)
     return (
         {
             type: "CONQUER_PROVINCE",

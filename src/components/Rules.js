@@ -70,7 +70,7 @@ function Rules(props) {
                 <RegularText>GROW: Get Legionaries, Pass Day</RegularText>       
                 <RegularText>Tribute Day: Get Gold, Higher Difficult</RegularText>
                 <RegularText>Gold buys improvements to Rome</RegularText>
-                <RegularText>Buy improvement, double price</RegularText>
+                <RegularText>Buy improvement, Double price</RegularText>
 
                 <HorizontalDivider/>
 
