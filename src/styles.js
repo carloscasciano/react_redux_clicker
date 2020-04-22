@@ -116,6 +116,7 @@ export const ConqueredTerritorySkeleton = styled.div`
 `
 
 export const ToConquerTerritorySkeleton = styled.div`
+    width: 80%;
     display: flex;
     flex-direction: row;  
     justify-content: center;
@@ -222,35 +223,54 @@ export const HorizontalDivider = styled.hr`
 
 export const LegionaryButton = styled.button`
     border: none;
+    height: 60px;
     background: ${baseColors.red};
-    color: ${baseColors.blue} ;
+    color: ${baseColors.backgroundWhite};
+    font-size: 1em;
     padding: 20px;
     border-radius: 6px;
     display: inline-block;
     width: 300px;
+    transition: 0.1s all ease-out;
+    
+    
+    &:active {
+        background-color: ${baseColors.red};
+        color: ${baseColors.red};
+        font-size: 1.1em;
+        box-shadow: inset 0 0 10px ${baseColors.textBlack};
+      }
+   
 `
 
 export const BuyButton = styled.button`
     border: none;
     background: ${baseColors.textGold};
-    color: ${baseColors.textBlack};
-    text-size: 1em;
+    color: ${baseColors.backgroundWhite};
+    font-size: 1.5em;
     border-radius: 30px;
     display: inline-block;
     width: 50px;
     height: 50px;
     margin: 10px;
+    transition: 0.2s all ease-out;
+
+    &:active {
+        background-color: ${baseColors.textGold};
+        color: ${baseColors.textGold};
+        font-size: 1.3em;
+      },
 `
 
 export const ConquerButton = styled.button `
     border: none;
     background: ${baseColors.red};
-    color: ${baseColors.blue} ;
-    padding: 20px;
+    color: ${baseColors.backgroundWhite} ;
     border-radius: 30px;
     display: inline-block;
     width: 30px;
     height: 30px;
+
 `
 
 /* Icons: */

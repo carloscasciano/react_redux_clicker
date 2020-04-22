@@ -80,7 +80,9 @@ function Provinces(props) {
                                         <RegularText>{prov.provinceName}</RegularText>
                                         <ConquerButton onClick={checkIfCanConquer(props.provincePriceWithBonus, props.legionaries, props.manageConquerProvinceconquerProvince, props.notAvailable)} 
                                                 value={prov.provinceName}
-                                        />
+                                        >
+                                            C
+                                        </ConquerButton>
                                     </BuyProvinceBlock>
                                 </div>
                                 )

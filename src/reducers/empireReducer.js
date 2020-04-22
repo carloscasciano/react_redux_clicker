@@ -143,7 +143,9 @@ const startGameRomanEmpire = [
         case 'CONQUER_PROVINCE':
 
             const chosenProvince = action.data.provinceName   
+            console.log(chosenProvince)
             const provinceToConquer = state[0]["provinces"].filter(prov=>prov.provinceName===chosenProvince)[0]
+            console.log(provinceToConquer)
             provinceToConquer["possession"] = true
 
             state[0]["legionaries"] = state[0]["legionaries"] - state[0].provincePriceWithBonus
