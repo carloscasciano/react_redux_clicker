@@ -155,6 +155,11 @@ const startGameRomanEmpire = [
         case 'ALERT_USER':
             const alertMessage = action.data.alertString
             state[0]["message"] = alertMessage
+
+            if (state[0]["date"] > 400) {
+                state[0]["message"] = "Our enemies are too strong! It is impossible to win now. Press F5 to restart!"
+            }
+
             return state  
 
         default:

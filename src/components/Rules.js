@@ -71,6 +71,7 @@ function Rules(props) {
                 <RegularText>Tribute Day: Get Gold, Higher Difficult</RegularText>
                 <RegularText>Gold buys improvements to Rome</RegularText>
                 <RegularText>Buy improvement, Double price</RegularText>
+                <RegularText>Press F5 to restart</RegularText>
 
                 <HorizontalDivider/>
 
