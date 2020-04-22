@@ -45,7 +45,7 @@ Mauretania Tingitana
 
 
 
-"provincies": [
+"provinces": [
         {
           "provinceName": "Rome",
           "possession": true

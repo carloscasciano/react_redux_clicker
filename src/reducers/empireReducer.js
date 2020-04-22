@@ -28,7 +28,7 @@ const startGameRomanEmpire = [
       "provincePriceWithBonus": 0,
       "baseProvinceGold": 100,
       "provinceGoldWithBonus": 0,
-      "provincies": [
+      "provinces": [
         {
           "provinceName": "Rome",
           "possession": true
@@ -104,7 +104,7 @@ const startGameRomanEmpire = [
     const bonusPercentual = 3
     const daysRule = state[0]["daysUntilActionsChange"]
     const multiplierFactor = 1.2
-    const totalProvincesConquered = state[0]["provincies"].filter(prov=>prov.possession===true).length
+    const totalProvincesConquered = state[0]["provinces"].filter(prov=>prov.possession===true).length
     const totalRomanBridges = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Bridge")[0]["enhancementQty"]
     const totalRomanArc = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Roman Arc")[0]["enhancementQty"]
     const totalAqueducts = state[0]["enhancements"].filter(enh=>enh.enhancementName==="Aqueduct")[0]["enhancementQty"]
@@ -140,15 +140,15 @@ const startGameRomanEmpire = [
             state[0]["roundLog"] = state[0]["roundLog"].concat("Day " + state[0]["date"] + " : " + enhancementToAdd["enhancementName"] + " built")
             return state
 
-        case 'CONQUER_PROVINCY':
+        case 'CONQUER_PROVINCE':
 
-            const chosenProvincy = action.data.provincyName   
-            const provincyToConquer = state[0]["provincies"].filter(prov=>prov.provinceName===chosenProvincy)[0]
-            provincyToConquer["possession"] = true
+            const chosenProvince = action.data.provinceName   
+            const provinceToConquer = state[0]["provinces"].filter(prov=>prov.provinceName===chosenProvince)[0]
+            provinceToConquer["possession"] = true
 
             state[0]["legionaries"] = state[0]["legionaries"] - state[0].provincePriceWithBonus
 
-            state[0]["roundLog"] = state[0]["roundLog"].concat("Day " + state[0]["date"] + " : " + provincyToConquer["provinceName"] + " conquered")
+            state[0]["roundLog"] = state[0]["roundLog"].concat("Day " + state[0]["date"] + " : " + provinceToConquer["provinceName"] + " conquered")
             return state
 
 

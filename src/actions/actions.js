@@ -17,12 +17,12 @@ export const addEnhancement = (enhancementName) => {
     )
 }
 
-export const conquerProvincy = (provincyName) => {
+export const conquerProvince = (provinceName) => {
     return (
         {
-            type: "CONQUER_PROVINCY",
+            type: "CONQUER_PROVINCE",
             data: {
-                provincyName: provincyName
+                provinceName: provinceName
             }
         }
     )

@@ -5,13 +5,13 @@ import { WinningConditionSkeleton, HorizontalDivider } from '../styles'
 const mapStateToProps = (state) => {
     return {
             date: state[0].date,
-            provincies: state[0].provincies
+            provinces: state[0].provinces
     }
 }
 
 function WinningArea(props) {
 
-    const allConquered = props.provincies.filter(prov => prov.possession === false).length
+    const allConquered = props.provinces.filter(prov => prov.possession === false).length
 
     if (allConquered === 0) {
         return (
