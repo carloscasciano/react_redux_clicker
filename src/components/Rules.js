@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { RulesEskeleton, RegularText, RegularList, MiniTitleText, GameIcon, GameIconHelper, HorizontalDivider } from '../styles'
+import { RulesEskeleton, RegularText, MiniTitleText, GameIcon, GameIconHelper, HorizontalDivider } from '../styles'
 
 const mapStateToProps = (state) => {
     return {

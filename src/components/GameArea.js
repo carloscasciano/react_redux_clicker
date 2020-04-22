@@ -11,16 +11,27 @@ export default function GameArea() {
     return (
         <>
             <MainTitleText>Roman Empire Clicker</MainTitleText>
-            <HorizontalDivider/>
+
+                <HorizontalDivider/>
+
             <WinningArea/>
+
             <Information />
-            <HorizontalDivider/>
+
+                <HorizontalDivider/>
+
             <CommandCentral/>
-            <HorizontalDivider/>
+
+                <HorizontalDivider/>
+            
             <Army/>
-            <HorizontalDivider/>
+            
+                <HorizontalDivider/>
+            
             <Enhancements/>
-            <HorizontalDivider/>
+                
+                <HorizontalDivider/>
+           
             <Provincies/>
         </>
     )

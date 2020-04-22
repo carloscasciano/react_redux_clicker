@@ -29,8 +29,7 @@ function WinningArea(props) {
 
     return (
         <div>
-            <WinningConditionSkeleton>
-            </WinningConditionSkeleton>
+            <WinningConditionSkeleton />
         </div>
     )
 }

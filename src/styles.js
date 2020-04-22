@@ -1,7 +1,3 @@
-/* 
-font: Muli
-*/
-
 import styled from "styled-components"
 
 /* Colors: */
@@ -19,9 +15,9 @@ const baseColors =
 /* Skeletons: */
 
 export const WinningConditionSkeleton = styled.div`
+    display: ${props => props.win ? "flex" : "none"};
     height: 80px;
     width: 100%;
-    display: ${props => props.win ? "flex" : "none"};
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -219,6 +215,7 @@ export const VerticalDivider = styled.hr`
 export const HorizontalDivider = styled.hr`
     width: 100%;
     border-right: 3px ${baseColors.red};
+    opacity: 0.2;
 `
 
 /* Buttons: */
